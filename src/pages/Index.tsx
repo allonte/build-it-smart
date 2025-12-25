@@ -1,13 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import Projects from "@/components/Projects";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>BuildCraft Construction | Building the Future with Precision & Integrity</title>
+        <meta
+          name="description"
+          content="BuildCraft is a premier construction company with 25+ years of experience in residential, commercial, and infrastructure projects. Get a free quote today!"
+        />
+        <meta
+          name="keywords"
+          content="construction company, building contractor, residential construction, commercial construction, civil engineering, renovation services"
+        />
+        <link rel="canonical" href="https://buildcraft.com" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <Projects />
+          <WhyChooseUs />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
