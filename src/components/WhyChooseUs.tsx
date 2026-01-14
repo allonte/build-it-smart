@@ -35,18 +35,18 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-purple">
+    <section className="py-24 bg-accent">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
-            <span className="text-primary-foreground/80 font-semibold uppercase tracking-wider text-sm">
+            <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent-foreground/80">
               Why Choose Us
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mt-2 mb-6">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-accent-foreground mt-4 mb-8">
               Building Trust Through Excellence
             </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8">
+            <p className="font-sans text-accent-foreground/80 text-lg leading-relaxed mb-10">
               With years of experience, we've built our reputation on delivering
               exceptional construction services. Here's what sets us apart from
               the competition.
@@ -56,12 +56,12 @@ const WhyChooseUs = () => {
             <div className="grid sm:grid-cols-2 gap-6">
               {reasons.map((reason) => (
                 <div key={reason.title} className="flex gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary-foreground shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-accent-foreground shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-semibold text-primary-foreground mb-1">
+                    <h3 className="font-sans font-medium text-accent-foreground mb-1 tracking-wide">
                       {reason.title}
                     </h3>
-                    <p className="text-primary-foreground/70 text-sm">
+                    <p className="font-sans text-accent-foreground/70 text-sm leading-relaxed">
                       {reason.description}
                     </p>
                   </div>
@@ -71,8 +71,8 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Certifications & Awards */}
-          <div className="bg-background/10 backdrop-blur-sm rounded-2xl p-8 border border-primary-foreground/20">
-            <h3 className="text-xl font-bold text-primary-foreground mb-6">
+          <div className="bg-accent-foreground/10 backdrop-blur-sm p-8 border border-accent-foreground/20">
+            <h3 className="font-serif text-2xl text-accent-foreground mb-8">
               Certifications & Accreditations
             </h3>
             <div className="grid grid-cols-2 gap-6">
@@ -84,15 +84,15 @@ const WhyChooseUs = () => {
               ].map((cert) => (
                 <div
                   key={cert.name}
-                  className="bg-background/10 rounded-xl p-4 text-center"
+                  className="bg-accent-foreground/10 p-5 text-center border border-accent-foreground/10"
                 >
-                  <div className="w-12 h-12 bg-primary-foreground/20 rounded-lg mx-auto mb-3 flex items-center justify-center">
-                    <CheckCircle2 className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-12 h-12 border border-accent-foreground/30 mx-auto mb-4 flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-accent-foreground" />
                   </div>
-                  <h4 className="font-semibold text-primary-foreground text-sm">
+                  <h4 className="font-sans font-medium text-accent-foreground text-sm tracking-wide">
                     {cert.name}
                   </h4>
-                  <p className="text-primary-foreground/60 text-xs mt-1">
+                  <p className="font-sans text-accent-foreground/60 text-xs mt-1">
                     {cert.desc}
                   </p>
                 </div>
@@ -100,19 +100,19 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Stats */}
-            <div className="mt-8 pt-8 border-t border-primary-foreground/20">
+            <div className="mt-8 pt-8 border-t border-accent-foreground/20">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-primary-foreground">A+</div>
-                  <div className="text-primary-foreground/60 text-xs mt-1">Client Rating</div>
+                  <div className="font-serif text-4xl text-accent-foreground">A+</div>
+                  <div className="font-sans text-accent-foreground/60 text-xs mt-1 tracking-wider uppercase">Client Rating</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary-foreground">4.9</div>
-                  <div className="text-primary-foreground/60 text-xs mt-1">Google Reviews</div>
+                  <div className="font-serif text-4xl text-accent-foreground">4.9</div>
+                  <div className="font-sans text-accent-foreground/60 text-xs mt-1 tracking-wider uppercase">Reviews</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary-foreground">100%</div>
-                  <div className="text-primary-foreground/60 text-xs mt-1">Licensed & Insured</div>
+                  <div className="font-serif text-4xl text-accent-foreground">100%</div>
+                  <div className="font-sans text-accent-foreground/60 text-xs mt-1 tracking-wider uppercase">Insured</div>
                 </div>
               </div>
             </div>

@@ -40,17 +40,17 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-card">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+          <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent">
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-8">
             What Our Clients Say
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
             Don't just take our word for it. Here's what our valued clients have
             to say about their experience working with Mazika Engineering.
           </p>
@@ -58,20 +58,20 @@ const Testimonials = () => {
 
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-card border border-border rounded-2xl p-8 md:p-12">
+          <div className="relative bg-background border border-border p-10 md:p-14">
             {/* Quote Icon */}
-            <div className="absolute top-6 right-6 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-              <Quote className="w-8 h-8 text-primary" />
+            <div className="absolute top-8 right-8 w-16 h-16 border border-accent/30 flex items-center justify-center">
+              <Quote className="w-7 h-7 text-accent" />
             </div>
 
             {/* Content */}
             <div className="text-center">
               {/* Stars */}
-              <div className="flex justify-center gap-1 mb-6">
+              <div className="flex justify-center gap-1 mb-8">
                 {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
                   <svg
                     key={i}
-                    className="w-6 h-6 text-primary fill-current"
+                    className="w-5 h-5 text-accent fill-current"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -80,22 +80,22 @@ const Testimonials = () => {
               </div>
 
               {/* Quote */}
-              <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8 italic">
+              <p className="font-serif text-xl md:text-2xl text-foreground leading-relaxed mb-10 italic">
                 "{testimonials[activeIndex].content}"
               </p>
 
               {/* Author */}
               <div className="flex items-center justify-center gap-4">
-                <div className="w-16 h-16 bg-gradient-purple rounded-full flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary-foreground">
+                <div className="w-16 h-16 bg-accent flex items-center justify-center">
+                  <span className="font-serif text-2xl text-accent-foreground">
                     {testimonials[activeIndex].name.charAt(0)}
                   </span>
                 </div>
                 <div className="text-left">
-                  <h4 className="font-bold text-foreground">
+                  <h4 className="font-sans font-medium text-foreground tracking-wide">
                     {testimonials[activeIndex].name}
                   </h4>
-                  <p className="text-muted-foreground text-sm">
+                  <p className="font-sans text-muted-foreground text-sm">
                     {testimonials[activeIndex].role}
                   </p>
                 </div>
@@ -103,17 +103,17 @@ const Testimonials = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex justify-center gap-4 mt-8">
+            <div className="flex justify-center gap-4 mt-10">
               <button
                 onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-muted hover:border-primary/50 transition-colors"
+                className="w-12 h-12 border border-border flex items-center justify-center hover:bg-muted hover:border-accent/50 transition-all"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="w-5 h-5 text-foreground" />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-muted hover:border-primary/50 transition-colors"
+                className="w-12 h-12 border border-border flex items-center justify-center hover:bg-muted hover:border-accent/50 transition-all"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="w-5 h-5 text-foreground" />
@@ -121,15 +121,15 @@ const Testimonials = () => {
             </div>
 
             {/* Dots */}
-            <div className="flex justify-center gap-2 mt-6">
+            <div className="flex justify-center gap-3 mt-8">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`h-2 rounded-full transition-all ${
+                  className={`h-px transition-all ${
                     index === activeIndex
-                      ? "w-8 bg-primary"
-                      : "w-2 bg-muted-foreground/30"
+                      ? "w-10 bg-accent"
+                      : "w-6 bg-muted-foreground/30"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

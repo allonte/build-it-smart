@@ -24,30 +24,27 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-card/95 backdrop-blur-md shadow-lg py-4"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-purple rounded-full flex items-center justify-center">
-            <span className="font-heading font-bold text-primary-foreground text-lg">M</span>
-          </div>
-          <span className="font-heading font-bold text-lg text-foreground">
-            Mazika Engineering
+          <span className="font-serif text-2xl tracking-[0.1em] text-foreground">
+            Mazika
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="font-medium text-foreground/80 transition-colors hover:text-primary"
+              className="font-sans text-sm tracking-[0.1em] uppercase text-muted-foreground transition-colors hover:text-accent"
             >
               {item.label}
             </a>
@@ -55,10 +52,10 @@ const Header = () => {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-6">
           <a
             href="tel:+254712345678"
-            className="flex items-center gap-2 font-medium text-foreground/80"
+            className="flex items-center gap-2 font-sans text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <Phone className="w-4 h-4" />
             <span>+254 712 345 678</span>
@@ -87,7 +84,7 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="font-medium text-foreground hover:text-primary py-2"
+                className="font-sans text-sm tracking-[0.1em] uppercase text-foreground hover:text-accent py-2"
               >
                 {item.label}
               </a>
