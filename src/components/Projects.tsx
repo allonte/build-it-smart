@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { ArrowRight, Folder } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import projectResidential from "@/assets/project-residential.jpg";
-import projectCommercial from "@/assets/project-commercial.jpg";
-import projectInfrastructure from "@/assets/project-infrastructure.jpg";
+import projectResidential1 from "@/assets/project-residential-1.jpg";
+import projectResidential2 from "@/assets/project-residential-2.jpg";
+import projectCommercial1 from "@/assets/project-commercial-1.jpg";
+import projectCommercial2 from "@/assets/project-commercial-2.jpg";
+import projectInfrastructure1 from "@/assets/project-infrastructure-1.jpg";
+import projectInfrastructure2 from "@/assets/project-infrastructure-2.jpg";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -21,7 +24,7 @@ const Projects = () => {
       title: "Sunrise Vista Residences",
       category: "residential",
       location: "Nairobi, Kenya",
-      image: projectResidential,
+      image: projectResidential1,
       value: "KES 25M",
     },
     {
@@ -29,7 +32,7 @@ const Projects = () => {
       title: "Metro Business Center",
       category: "commercial",
       location: "Westlands, Nairobi",
-      image: projectCommercial,
+      image: projectCommercial1,
       value: "KES 150M",
     },
     {
@@ -37,7 +40,7 @@ const Projects = () => {
       title: "Highway Overpass",
       category: "infrastructure",
       location: "Mombasa Road",
-      image: projectInfrastructure,
+      image: projectInfrastructure1,
       value: "KES 450M",
     },
     {
@@ -45,7 +48,7 @@ const Projects = () => {
       title: "Oakwood Family Homes",
       category: "residential",
       location: "Karen, Nairobi",
-      image: projectResidential,
+      image: projectResidential2,
       value: "KES 80M",
     },
     {
@@ -53,7 +56,7 @@ const Projects = () => {
       title: "Tech Hub Campus",
       category: "commercial",
       location: "Konza City",
-      image: projectCommercial,
+      image: projectCommercial2,
       value: "KES 280M",
     },
     {
@@ -61,7 +64,7 @@ const Projects = () => {
       title: "Riverside Bridge Project",
       category: "infrastructure",
       location: "Kisumu",
-      image: projectInfrastructure,
+      image: projectInfrastructure2,
       value: "KES 350M",
     },
   ];
@@ -73,15 +76,15 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-border px-4 py-2 mb-6">
-            <Folder className="w-4 h-4 text-accent" />
+          <div className="inline-flex items-center gap-2 border border-border rounded-full px-4 py-2 mb-6">
+            <Folder className="w-4 h-4 text-primary" />
             <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground">Our Portfolio</span>
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mb-8">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-8">
             Featured Projects
           </h2>
           <p className="font-sans text-muted-foreground text-lg leading-relaxed">
@@ -95,10 +98,10 @@ const Projects = () => {
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-3 font-sans text-xs tracking-[0.15em] uppercase transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-sans text-xs tracking-[0.15em] uppercase transition-all duration-300 ${
                 activeFilter === filter.id
-                  ? "bg-accent text-accent-foreground"
-                  : "border border-border text-muted-foreground hover:text-foreground hover:border-accent/50"
+                  ? "bg-primary text-primary-foreground"
+                  : "border border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
               }`}
             >
               {filter.label}
@@ -111,7 +114,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-card border border-border overflow-hidden hover:border-accent/50 transition-all duration-500"
+              className="group bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500"
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
@@ -132,7 +135,7 @@ const Projects = () => {
               {/* Content */}
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="font-sans text-xs tracking-[0.15em] uppercase text-accent">
+                  <span className="font-sans text-xs tracking-[0.15em] uppercase text-primary">
                     {project.category}
                   </span>
                   <span className="text-muted-foreground text-xs">•</span>
@@ -140,14 +143,14 @@ const Projects = () => {
                     {project.location}
                   </span>
                 </div>
-                <h3 className="font-serif text-xl text-foreground mb-3">
+                <h3 className="font-display text-xl text-foreground mb-3">
                   {project.title}
                 </h3>
                 <div className="flex items-center justify-between pt-3 border-t border-border">
                   <span className="font-sans text-xs tracking-wider uppercase text-muted-foreground">
                     Project Value
                   </span>
-                  <span className="font-serif text-xl text-accent">
+                  <span className="font-display text-xl text-primary">
                     {project.value}
                   </span>
                 </div>
