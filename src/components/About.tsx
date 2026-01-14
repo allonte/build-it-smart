@@ -1,64 +1,97 @@
-import { Shield, Clock, Users, Award, Target, Eye } from "lucide-react";
+import { Target, Eye, Shield, Lightbulb, Users, Sparkles } from "lucide-react";
 
 const About = () => {
   const values = [
-    { title: "Quality", description: "Excellence in every project we deliver" },
-    { title: "Safety", description: "Rigorous protocols protecting everyone" },
-    { title: "Teamwork", description: "Collaborative approach to success" },
-    { title: "Innovation", description: "Creative and sustainable solutions" },
+    { icon: Shield, title: "Quality", description: "Excellence in every project" },
+    { icon: Shield, title: "Safety", description: "Rigorous protocols always" },
+    { icon: Users, title: "Teamwork", description: "Collaborative approach" },
+    { icon: Lightbulb, title: "Innovation", description: "Creative solutions" },
+  ];
+
+  const roles = [
+    "Civil Engineers",
+    "Mechanical Engineers",
+    "Electrical Engineers",
+    "Software Engineers",
+    "Surveyors",
+    "Architects",
+    "Quantity Surveyors",
+    "Visualizers",
   ];
 
   return (
-    <section id="about" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-24 bg-gradient-dark relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(40_15%_18%/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(40_15%_18%/0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      
+      <div className="container mx-auto px-6 relative">
         {/* Overview */}
         <div className="max-w-4xl mx-auto text-center mb-20">
-          <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent">
-            Overview
-          </span>
-          <p className="font-serif text-xl md:text-2xl text-foreground mt-6 leading-relaxed">
-            Beautiful, functional buildings, interiors and landscapes are achieved through a disciplined approach involving rigorous analysis of purpose, sensitive understanding of the environment, creation of coherent spaces and meticulous detailing.
-          </p>
-          <p className="font-sans text-muted-foreground mt-6 leading-relaxed">
-            Employing a design philosophy with a focus on innovative and sustainable ideas, substantive intentions, and an understanding of the human need. We are a team of Engineers, Designers, Architects, Interior Designers, Construction Project Managers, Real Estate professionals, and Visualizers with a keen interest in helping you conceive and create buildings, interiors, and landscapes that adhere to the essential elements of successful developments.
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-6">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="font-sans text-xs tracking-[0.2em] uppercase text-primary">About Us</span>
+          </div>
+          
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 leading-tight">
+            Crafting <span className="text-gradient-gold">Excellence</span> Through
+            <br />Disciplined Design
+          </h2>
+          
+          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
+            Beautiful, functional buildings, interiors and landscapes are achieved through a disciplined approach 
+            involving rigorous analysis of purpose, sensitive understanding of the environment, creation of 
+            coherent spaces and meticulous detailing.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Mission & Vision */}
-          <div className="space-y-12">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 border border-accent flex items-center justify-center">
-                  <Target className="w-5 h-5 text-accent" />
+          <div className="space-y-8">
+            {/* Mission */}
+            <div className="group p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-500">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold">
+                  <Target className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="font-serif text-2xl text-foreground">Our Mission</h3>
+                <h3 className="font-display text-2xl text-foreground">Our Mission</h3>
               </div>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                Our mission is to provide quality service both personally, professionally, and in practice with a non-adversarial approach. We believe in offering innovative, creative, and sustainable solutions in the design and build environment to our clients.
+                To provide quality service both personally, professionally, and in practice with a non-adversarial 
+                approach. We believe in offering innovative, creative, and sustainable solutions in the design 
+                and build environment to our clients.
               </p>
             </div>
 
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 border border-accent flex items-center justify-center">
-                  <Eye className="w-5 h-5 text-accent" />
+            {/* Vision */}
+            <div className="group p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-500">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold">
+                  <Eye className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="font-serif text-2xl text-foreground">Our Vision</h3>
+                <h3 className="font-display text-2xl text-foreground">Our Vision</h3>
               </div>
               <p className="font-sans text-muted-foreground leading-relaxed">
-                Our vision is to be the best company in architecture design, interior design, 3D rendering, project management, and development in East Africa.
+                To be the best company in architecture design, interior design, 3D rendering, project management, 
+                and development in East Africa.
               </p>
             </div>
 
             {/* Values */}
             <div>
-              <h3 className="font-serif text-2xl text-foreground mb-6">Our Values</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {values.map((value) => (
-                  <div key={value.title} className="border border-border p-4 hover:border-accent/50 transition-colors">
-                    <h4 className="font-sans font-medium text-foreground mb-1">{value.title}</h4>
-                    <p className="font-sans text-muted-foreground text-sm">{value.description}</p>
+              <h3 className="font-display text-xl text-foreground mb-5">Our Core Values</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {values.map((value, index) => (
+                  <div 
+                    key={value.title} 
+                    className="group p-4 rounded-2xl bg-card/30 border border-border hover:border-primary/30 hover:bg-card/50 transition-all duration-300"
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <value.icon className="w-4 h-4 text-primary" />
+                      </div>
+                      <h4 className="font-sans font-semibold text-foreground">{value.title}</h4>
+                    </div>
+                    <p className="font-sans text-sm text-muted-foreground pl-11">{value.description}</p>
                   </div>
                 ))}
               </div>
@@ -66,45 +99,45 @@ const About = () => {
           </div>
 
           {/* Team Composition */}
-          <div>
-            <h3 className="font-serif text-2xl text-foreground mb-6">We Are a Professional Team</h3>
-            <p className="font-sans text-muted-foreground mb-8 leading-relaxed">
-              Our diverse team brings together expertise from multiple engineering and design disciplines:
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                "Civil Engineers",
-                "Mechanical Engineers",
-                "Electrical Engineers",
-                "Software Engineers",
-                "Surveyors",
-                "Architects",
-                "Quantity Surveyors",
-                "Visualizers",
-              ].map((role) => (
-                <div key={role} className="flex items-center gap-3 py-3 border-b border-border">
-                  <div className="w-1.5 h-1.5 bg-accent" />
-                  <span className="font-sans text-foreground text-sm">{role}</span>
-                </div>
-              ))}
+          <div className="space-y-8">
+            <div className="p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border">
+              <h3 className="font-display text-2xl text-foreground mb-4">
+                We Are a <span className="text-gradient-gold">Professional</span> Team
+              </h3>
+              <p className="font-sans text-muted-foreground mb-8 leading-relaxed">
+                Our diverse team brings together expertise from multiple engineering and design disciplines:
+              </p>
+              
+              <div className="grid grid-cols-2 gap-3">
+                {roles.map((role, index) => (
+                  <div 
+                    key={role} 
+                    className="flex items-center gap-3 p-3 rounded-xl bg-background/50 border border-border/50 group hover:border-primary/30 transition-all duration-300"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-gradient-gold" />
+                    <span className="font-sans text-sm text-foreground">{role}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Certifications Preview */}
-            <div className="mt-10 bg-card border border-border p-6">
-              <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-accent mb-4">Certifications</h4>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="font-sans text-sm text-foreground">NCA Registered</span>
-                  <span className="font-sans text-xs text-muted-foreground">Category NCA 8</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-sans text-sm text-foreground">Incorporated</span>
-                  <span className="font-sans text-xs text-muted-foreground">March 2021</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-sans text-sm text-foreground">KRA Registered</span>
-                  <span className="font-sans text-xs text-muted-foreground">PIN: P052001159M</span>
-                </div>
+            {/* Certifications */}
+            <div className="p-8 rounded-3xl bg-gradient-gold-soft border border-primary/20">
+              <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-primary mb-6 flex items-center gap-2">
+                <Shield className="w-4 h-4" />
+                Certifications & Registration
+              </h4>
+              <div className="space-y-4">
+                {[
+                  { label: "NCA Registered", value: "Category NCA 8" },
+                  { label: "Incorporated", value: "March 2021" },
+                  { label: "KRA Registered", value: "PIN: P052001159M" },
+                ].map((item) => (
+                  <div key={item.label} className="flex justify-between items-center py-3 border-b border-primary/10 last:border-0">
+                    <span className="font-sans text-foreground">{item.label}</span>
+                    <span className="font-sans text-sm text-primary font-medium">{item.value}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

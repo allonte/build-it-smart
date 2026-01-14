@@ -1,42 +1,113 @@
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Building2, Users, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import logoMazika from "@/assets/logo-mazika.png";
 
 const Hero = () => {
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const stats = [
+    { icon: Building2, value: "150+", label: "Projects Completed" },
+    { icon: Users, value: "100+", label: "Happy Clients" },
+    { icon: Award, value: "5+", label: "Years Excellence" },
+  ];
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient"
     >
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Gradient Orbs */}
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float animation-delay-300" />
+        
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(40_15%_18%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(40_15%_18%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        
+        {/* Radial Gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(42_85%_55%/0.05)_0%,transparent_70%)]" />
+      </div>
+
       {/* Content */}
-      <div className="relative container mx-auto px-4 text-center">
-        {/* Decorative top element */}
-        <div className="flex flex-col items-center mb-12 animate-fade-in">
-          <div className="w-24 h-px bg-accent mb-3" />
-          <div className="w-2 h-2 rounded-full bg-accent" />
+      <div className="relative container mx-auto px-6 pt-24 pb-12">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Logo Animation */}
+          <div className="mb-8 animate-fade-in">
+            <img 
+              src={logoMazika} 
+              alt="Mazika Design and Build" 
+              className="h-24 md:h-32 w-auto mx-auto glow-gold"
+            />
+          </div>
+
+          {/* Main Headline */}
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight mb-6 animate-fade-in-up animation-delay-200">
+            <span className="text-foreground">Building </span>
+            <span className="text-gradient-gold">Dreams</span>
+            <br />
+            <span className="text-foreground">Into </span>
+            <span className="text-gradient-gold">Reality</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-400 leading-relaxed">
+            Premier design, engineering, and construction services in East Africa. 
+            We transform your vision into exceptional architectural masterpieces.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-500">
+            <Button 
+              onClick={scrollToContact}
+              size="xl" 
+              className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold hover:shadow-gold-lg transition-all duration-300"
+            >
+              Start Your Project
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+            <Button 
+              onClick={scrollToAbout}
+              variant="outline" 
+              size="xl"
+              className="border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary/50"
+            >
+              Explore Our Work
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-700">
+            {stats.map((stat, index) => (
+              <div 
+                key={stat.label}
+                className="group relative p-4 md:p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-gold-soft opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
+                <div className="relative">
+                  <stat.icon className="w-6 h-6 text-primary mx-auto mb-2 md:mb-3" />
+                  <div className="font-display text-2xl md:text-4xl text-gradient-gold mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="font-sans text-xs md:text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Main Title */}
-        <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground tracking-[0.15em] mb-8 animate-fade-in-up animation-delay-200">
-          Mazika
-        </h1>
-
-        {/* Tagline */}
-        <p className="font-sans text-sm md:text-base tracking-[0.4em] uppercase text-muted-foreground mb-8 animate-fade-in-up animation-delay-400">
-          Design & Build . Estate Managers
-        </p>
-
-        {/* Decorative bottom element */}
-        <div className="flex justify-center mb-20 animate-fade-in animation-delay-500">
-          <div className="w-64 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
-        </div>
-
-        {/* Scroll indicator */}
+        {/* Scroll Indicator */}
         <button
           onClick={scrollToAbout}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors cursor-pointer animate-fade-in animation-delay-700"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer animate-fade-in animation-delay-1000"
         >
           <span className="font-sans text-xs tracking-[0.3em] uppercase">Scroll</span>
           <ChevronDown className="w-5 h-5 animate-bounce-slow" />

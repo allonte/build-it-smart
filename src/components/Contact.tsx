@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -32,8 +32,8 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "College House, Koinange Street, Nairobi",
-      subContent: "P.O. Box 9556 - 00200, Nairobi, Kenya",
+      content: "College House, Koinange Street",
+      subContent: "P.O. Box 9556 - 00200, Nairobi",
     },
     {
       icon: Phone,
@@ -56,29 +56,35 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-24 bg-background relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(42_85%_55%/0.03)_0%,transparent_60%)]" />
+      
+      <div className="container mx-auto px-6 relative">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent">
-            Contact Us
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-8">
-            Let's Build Something Great Together
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-6">
+            <MessageSquare className="w-4 h-4 text-primary" />
+            <span className="font-sans text-xs tracking-[0.2em] uppercase text-primary">Contact Us</span>
+          </div>
+          
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
+            Let's Build Something <span className="text-gradient-gold">Great</span> Together
           </h2>
+          
           <p className="font-sans text-muted-foreground text-lg leading-relaxed">
-            Ready to start your project? Get in touch with us today for a free
-            consultation and quote.
+            Ready to start your project? Get in touch with us today for a free consultation and quote.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-card border border-border p-8 md:p-10">
-            <h3 className="font-serif text-2xl text-foreground mb-8">
+          <div className="p-8 md:p-10 rounded-3xl bg-card/50 backdrop-blur-sm border border-border">
+            <h3 className="font-display text-2xl text-foreground mb-8">
               Request a Free Quote
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label
@@ -94,7 +100,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     placeholder="John Doe"
                   />
                 </div>
@@ -112,7 +118,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -132,7 +138,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors"
                     placeholder="+254 712 345 678"
                   />
                 </div>
@@ -148,7 +154,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-background font-sans text-foreground focus:outline-none focus:border-primary transition-colors"
                   >
                     <option value="">Select a service</option>
                     <option value="architecture">Architecture</option>
@@ -176,34 +182,37 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={4}
                   required
-                  className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background font-sans text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary transition-colors resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
-              <Button type="submit" variant="accent" size="lg" className="w-full">
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold hover:shadow-gold-lg transition-all duration-300 rounded-xl"
+              >
                 Send Message
                 <Send className="w-4 h-4" />
               </Button>
             </form>
           </div>
 
-          {/* Contact Info & Map */}
-          <div className="space-y-6">
-            {/* Contact Cards */}
+          {/* Contact Info */}
+          <div className="space-y-4">
             {contactInfo.map((info) => (
               <div
                 key={info.title}
-                className="bg-card border border-border p-6 flex gap-4"
+                className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 flex gap-5"
               >
-                <div className="w-12 h-12 border border-accent/30 flex items-center justify-center shrink-0">
-                  <info.icon className="w-5 h-5 text-accent" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center shrink-0 shadow-gold group-hover:shadow-gold-lg transition-shadow duration-300">
+                  <info.icon className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <div>
-                  <h4 className="font-sans font-medium text-foreground mb-1 tracking-wide">
+                  <h4 className="font-sans font-semibold text-foreground mb-1">
                     {info.title}
                   </h4>
-                  <p className="font-sans text-muted-foreground text-sm">{info.content}</p>
+                  <p className="font-sans text-muted-foreground">{info.content}</p>
                   {info.subContent && (
                     <p className="font-sans text-muted-foreground text-sm">{info.subContent}</p>
                   )}
@@ -212,14 +221,13 @@ const Contact = () => {
             ))}
 
             {/* Map Placeholder */}
-            <div className="bg-card border border-border h-48 flex items-center justify-center overflow-hidden">
+            <div className="p-6 rounded-2xl bg-gradient-gold-soft border border-primary/20 h-40 flex items-center justify-center">
               <div className="text-center">
-                <MapPin className="w-10 h-10 text-muted-foreground mx-auto mb-3" />
-                <p className="font-sans text-muted-foreground text-sm">
+                <MapPin className="w-10 h-10 text-primary mx-auto mb-3" />
+                <p className="font-sans text-foreground">
                   College House, Koinange Street
-                  <br />
-                  <span className="text-xs">Nairobi, Kenya</span>
                 </p>
+                <p className="font-sans text-muted-foreground text-sm">Nairobi, Kenya</p>
               </div>
             </div>
           </div>
