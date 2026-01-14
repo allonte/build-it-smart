@@ -52,17 +52,17 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-card">
+    <section id="contact" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+          <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent">
             Contact Us
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-6">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-8">
             Let's Build Something Great Together
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
             Ready to start your project? Get in touch with us today for a free
             consultation and quote.
           </p>
@@ -70,8 +70,8 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-background border border-border rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-foreground mb-6">
+          <div className="bg-card border border-border p-8 md:p-10">
+            <h3 className="font-serif text-2xl text-foreground mb-8">
               Request a Free Quote
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -79,7 +79,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="block font-sans text-xs tracking-wider uppercase text-muted-foreground mb-2"
                   >
                     Full Name
                   </label>
@@ -90,14 +90,14 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="block font-sans text-xs tracking-wider uppercase text-muted-foreground mb-2"
                   >
                     Email Address
                   </label>
@@ -108,7 +108,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -118,7 +118,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="block font-sans text-xs tracking-wider uppercase text-muted-foreground mb-2"
                   >
                     Phone Number
                   </label>
@@ -128,14 +128,14 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
                     placeholder="+254 712 345 678"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="service"
-                    className="block text-sm font-medium text-foreground mb-2"
+                    className="block font-sans text-xs tracking-wider uppercase text-muted-foreground mb-2"
                   >
                     Service Interested In
                   </label>
@@ -144,7 +144,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
                   >
                     <option value="">Select a service</option>
                     <option value="residential">Residential Construction</option>
@@ -158,7 +158,7 @@ const Contact = () => {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-foreground mb-2"
+                  className="block font-sans text-xs tracking-wider uppercase text-muted-foreground mb-2"
                 >
                   Project Details
                 </label>
@@ -169,12 +169,12 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={4}
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                  className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
-              <Button type="submit" variant="accent" size="lg" className="w-full rounded-full">
+              <Button type="submit" variant="accent" size="lg" className="w-full">
                 Send Message
                 <Send className="w-4 h-4" />
               </Button>
@@ -188,26 +188,26 @@ const Contact = () => {
               {contactInfo.map((info) => (
                 <div
                   key={info.title}
-                  className="bg-background border border-border rounded-xl p-6 flex gap-4"
+                  className="bg-card border border-border p-6 flex gap-4"
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <info.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 border border-accent/30 flex items-center justify-center shrink-0">
+                    <info.icon className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground mb-1">
+                    <h4 className="font-sans font-medium text-foreground mb-1 tracking-wide">
                       {info.title}
                     </h4>
-                    <p className="text-muted-foreground text-sm">{info.content}</p>
+                    <p className="font-sans text-muted-foreground text-sm">{info.content}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-background border border-border rounded-2xl h-80 flex items-center justify-center overflow-hidden">
+            <div className="bg-card border border-border h-80 flex items-center justify-center overflow-hidden">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-muted-foreground">
+                <p className="font-sans text-muted-foreground">
                   Interactive Map
                   <br />
                   <span className="text-sm">

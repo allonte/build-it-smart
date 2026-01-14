@@ -1,72 +1,46 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-construction.jpg";
+import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const scrollToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background"
     >
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Construction site with cranes and workers"
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-      </div>
-
       {/* Content */}
-      <div className="relative container mx-auto px-4 py-32 text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 animate-fade-in-up">
-            <span className="text-gradient-purple">MAZIKA</span>
-            <br />
-            <span className="text-gradient-purple">ENGINEERING</span>
-          </h1>
-
-          {/* Tagline */}
-          <p className="text-xl md:text-2xl text-foreground font-medium mb-2 animate-fade-in-up animation-delay-100">
-            where innovation meets construction
-          </p>
-
-          {/* Subheadline */}
-          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-            Bring your engineering dreams to life.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
-            <Button variant="accent" size="xl" className="rounded-full">
-              View Our Work
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="xl" className="rounded-full border-border hover:bg-muted">
-              Get In Touch
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="flex flex-wrap justify-center gap-12 md:gap-20 mt-20 animate-fade-in-up animation-delay-400">
-            {[
-              { value: "50+", label: "Projects Completed" },
-              { value: "5+", label: "Years Experience" },
-              { value: "100%", label: "Client Satisfaction" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-foreground mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-muted-foreground text-sm">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+      <div className="relative container mx-auto px-4 text-center">
+        {/* Decorative top element */}
+        <div className="flex flex-col items-center mb-12 animate-fade-in">
+          <div className="w-24 h-px bg-accent mb-3" />
+          <div className="w-2 h-2 rounded-full bg-accent" />
         </div>
+
+        {/* Main Title */}
+        <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-foreground tracking-[0.15em] mb-8 animate-fade-in-up animation-delay-200">
+          Mazika
+        </h1>
+
+        {/* Tagline */}
+        <p className="font-sans text-sm md:text-base tracking-[0.4em] uppercase text-muted-foreground mb-8 animate-fade-in-up animation-delay-400">
+          Design & Build . Estate Managers
+        </p>
+
+        {/* Decorative bottom element */}
+        <div className="flex justify-center mb-20 animate-fade-in animation-delay-500">
+          <div className="w-64 h-px bg-gradient-to-r from-transparent via-accent to-transparent" />
+        </div>
+
+        {/* Scroll indicator */}
+        <button
+          onClick={scrollToAbout}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors cursor-pointer animate-fade-in animation-delay-700"
+        >
+          <span className="font-sans text-xs tracking-[0.3em] uppercase">Scroll</span>
+          <ChevronDown className="w-5 h-5 animate-bounce-slow" />
+        </button>
       </div>
     </section>
   );
