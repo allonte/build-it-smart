@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Team", href: "#team" },
   { label: "Projects", href: "#projects" },
+  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -25,46 +23,35 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg py-4"
+          ? "bg-background/90 backdrop-blur-md py-4"
           : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#home" className="flex items-center gap-3">
-          <span className="font-serif text-2xl tracking-[0.1em] text-foreground">
+          <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center">
+            <span className="font-display text-sm font-bold text-primary">M</span>
+          </div>
+          <span className="font-display text-lg font-semibold text-foreground">
             Mazika
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-12">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="font-sans text-sm tracking-[0.1em] uppercase text-muted-foreground transition-colors hover:text-accent"
+              className="font-sans text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
           ))}
         </nav>
-
-        {/* Desktop CTA */}
-        <div className="hidden lg:flex items-center gap-6">
-          <a
-            href="tel:+254719757416"
-            className="flex items-center gap-2 font-sans text-sm text-muted-foreground hover:text-accent transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            <span>+254 719 757 416</span>
-          </a>
-          <Button variant="accent" size="lg">
-            Get a Quote
-          </Button>
-        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -78,21 +65,18 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-card shadow-lg border-t border-border animate-fade-in">
-          <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-card/95 backdrop-blur-md border-t border-border animate-fade-in">
+          <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="font-sans text-sm tracking-[0.1em] uppercase text-foreground hover:text-accent py-2"
+                className="font-sans text-sm text-foreground hover:text-primary py-2"
               >
                 {item.label}
               </a>
             ))}
-            <Button variant="accent" size="lg" className="mt-4">
-              Get a Quote
-            </Button>
           </nav>
         </div>
       )}
