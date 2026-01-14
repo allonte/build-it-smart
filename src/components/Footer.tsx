@@ -5,22 +5,22 @@ const Footer = () => {
 
   const footerLinks = {
     services: [
-      { label: "Residential Construction", href: "#services" },
-      { label: "Commercial Buildings", href: "#services" },
-      { label: "Renovations", href: "#services" },
-      { label: "Civil Engineering", href: "#services" },
+      { label: "Architecture", href: "#services" },
+      { label: "Structural Engineering", href: "#services" },
+      { label: "Design Visualization", href: "#services" },
+      { label: "Quantity Survey", href: "#services" },
+      { label: "Solar Solutions", href: "#services" },
     ],
     company: [
       { label: "About Us", href: "#about" },
+      { label: "Our Team", href: "#team" },
       { label: "Our Projects", href: "#projects" },
-      { label: "Testimonials", href: "#testimonials" },
-      { label: "Careers", href: "#" },
+      { label: "Certifications", href: "#about" },
     ],
     support: [
       { label: "Contact Us", href: "#contact" },
       { label: "Request Quote", href: "#contact" },
       { label: "FAQs", href: "#" },
-      { label: "Safety Policy", href: "#" },
     ],
   };
 
@@ -37,16 +37,15 @@ const Footer = () => {
               </span>
             </a>
             <p className="font-sans text-muted-foreground mb-6 max-w-sm leading-relaxed">
-              Design & Build . Estate Managers. Your trusted partner for residential, 
-              commercial, and infrastructure construction projects in Kenya and East Africa.
+              Design & Build . Estate Managers. Your trusted partner for architecture, engineering, and construction services in Kenya and East Africa since 2021.
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+254712345678"
+                href="tel:+254719757416"
                 className="flex items-center gap-3 font-sans text-sm text-muted-foreground hover:text-accent transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                +254 712 345 678
+                +254 719 757 416
               </a>
               <a
                 href="mailto:info@mazikaengineering.co.ke"
@@ -57,7 +56,11 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3 font-sans text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                Nairobi, Kenya
+                <span>
+                  College House, Koinange Street
+                  <br />
+                  P.O. Box 9556 - 00200, Nairobi
+                </span>
               </div>
             </div>
           </div>
@@ -111,6 +114,15 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+
+            {/* Certifications */}
+            <div className="mt-8">
+              <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-foreground mb-4">Registered With</h4>
+              <div className="space-y-2">
+                <span className="block font-sans text-xs text-muted-foreground">NCA Certified Contractor</span>
+                <span className="block font-sans text-xs text-muted-foreground">KRA Registered</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

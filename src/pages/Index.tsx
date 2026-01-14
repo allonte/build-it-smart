@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Team from "@/components/Team";
 import Projects from "@/components/Projects";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
@@ -13,16 +14,16 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>BuildCraft Construction | Building the Future with Precision & Integrity</title>
+        <title>Mazika Engineering Limited | Design & Build . Estate Managers</title>
         <meta
           name="description"
-          content="BuildCraft is a premier construction company with 25+ years of experience in residential, commercial, and infrastructure projects. Get a free quote today!"
+          content="Mazika Engineering Limited - Your trusted partner for architecture, engineering, and construction services in Kenya and East Africa. Design & Build, Estate Managers."
         />
         <meta
           name="keywords"
-          content="construction company, building contractor, residential construction, commercial construction, civil engineering, renovation services"
+          content="construction company Kenya, building contractor Nairobi, architecture design, structural engineering, quantity survey, civil engineering, 3D visualization, solar solutions"
         />
-        <link rel="canonical" href="https://buildcraft.com" />
+        <link rel="canonical" href="https://mazikaengineering.co.ke" />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -31,6 +32,7 @@ const Index = () => {
           <Hero />
           <About />
           <Services />
+          <Team />
           <Projects />
           <WhyChooseUs />
           <Testimonials />

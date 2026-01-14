@@ -6,6 +6,7 @@ const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Team", href: "#team" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -54,11 +55,11 @@ const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-6">
           <a
-            href="tel:+254712345678"
+            href="tel:+254719757416"
             className="flex items-center gap-2 font-sans text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span>+254 712 345 678</span>
+            <span>+254 719 757 416</span>
           </a>
           <Button variant="accent" size="lg">
             Get a Quote

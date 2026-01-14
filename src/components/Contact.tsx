@@ -32,22 +32,26 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "Nairobi, Kenya",
+      content: "College House, Koinange Street, Nairobi",
+      subContent: "P.O. Box 9556 - 00200, Nairobi, Kenya",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+254 712 345 678",
+      content: "+254 719 757 416",
+      subContent: "",
     },
     {
       icon: Mail,
       title: "Email Us",
       content: "info@mazikaengineering.co.ke",
+      subContent: "",
     },
     {
       icon: Clock,
       title: "Working Hours",
       content: "Mon - Fri: 8:00 AM - 6:00 PM",
+      subContent: "Sat: 9:00 AM - 1:00 PM",
     },
   ];
 
@@ -147,10 +151,13 @@ const Contact = () => {
                     className="w-full px-4 py-3 border border-border bg-background font-sans text-foreground focus:outline-none focus:border-accent transition-colors"
                   >
                     <option value="">Select a service</option>
-                    <option value="residential">Residential Construction</option>
-                    <option value="commercial">Commercial Buildings</option>
-                    <option value="renovation">Renovations & Remodeling</option>
-                    <option value="civil">Civil Engineering</option>
+                    <option value="architecture">Architecture</option>
+                    <option value="visualization">Design Visualization</option>
+                    <option value="structural">Structural Engineering</option>
+                    <option value="electrical">Electrical Engineering</option>
+                    <option value="mechanical">Mechanical Engineering</option>
+                    <option value="quantity">Quantity Survey</option>
+                    <option value="solar">Solar Power Solutions</option>
                   </select>
                 </div>
               </div>
@@ -182,37 +189,36 @@ const Contact = () => {
           </div>
 
           {/* Contact Info & Map */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             {/* Contact Cards */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {contactInfo.map((info) => (
-                <div
-                  key={info.title}
-                  className="bg-card border border-border p-6 flex gap-4"
-                >
-                  <div className="w-12 h-12 border border-accent/30 flex items-center justify-center shrink-0">
-                    <info.icon className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-sans font-medium text-foreground mb-1 tracking-wide">
-                      {info.title}
-                    </h4>
-                    <p className="font-sans text-muted-foreground text-sm">{info.content}</p>
-                  </div>
+            {contactInfo.map((info) => (
+              <div
+                key={info.title}
+                className="bg-card border border-border p-6 flex gap-4"
+              >
+                <div className="w-12 h-12 border border-accent/30 flex items-center justify-center shrink-0">
+                  <info.icon className="w-5 h-5 text-accent" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h4 className="font-sans font-medium text-foreground mb-1 tracking-wide">
+                    {info.title}
+                  </h4>
+                  <p className="font-sans text-muted-foreground text-sm">{info.content}</p>
+                  {info.subContent && (
+                    <p className="font-sans text-muted-foreground text-sm">{info.subContent}</p>
+                  )}
+                </div>
+              </div>
+            ))}
 
             {/* Map Placeholder */}
-            <div className="bg-card border border-border h-80 flex items-center justify-center overflow-hidden">
+            <div className="bg-card border border-border h-48 flex items-center justify-center overflow-hidden">
               <div className="text-center">
-                <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                <p className="font-sans text-muted-foreground">
-                  Interactive Map
+                <MapPin className="w-10 h-10 text-muted-foreground mx-auto mb-3" />
+                <p className="font-sans text-muted-foreground text-sm">
+                  College House, Koinange Street
                   <br />
-                  <span className="text-sm">
-                    Nairobi, Kenya
-                  </span>
+                  <span className="text-xs">Nairobi, Kenya</span>
                 </p>
               </div>
             </div>
