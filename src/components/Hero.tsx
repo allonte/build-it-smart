@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-construction.jpg";
 
 const Hero = () => {
@@ -12,75 +12,60 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Construction site with cranes and workers at sunset"
-          className="w-full h-full object-cover"
+          alt="Construction site with cranes and workers"
+          className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-hero-gradient opacity-85" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 py-32 text-center lg:text-left">
-        <div className="max-w-3xl mx-auto lg:mx-0">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2 mb-6 animate-fade-in-up">
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-primary-foreground text-sm font-medium">
-              25+ Years of Excellence
-            </span>
-          </div>
-
+      <div className="relative container mx-auto px-4 py-32 text-center">
+        <div className="max-w-4xl mx-auto">
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in-up animation-delay-100">
-            Building the Future with{" "}
-            <span className="text-gradient">Precision</span> &{" "}
-            <span className="text-gradient">Integrity</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4 animate-fade-in-up">
+            <span className="text-gradient-purple">MAZIKA</span>
+            <br />
+            <span className="text-gradient-purple">ENGINEERING</span>
           </h1>
 
+          {/* Tagline */}
+          <p className="text-xl md:text-2xl text-foreground font-medium mb-2 animate-fade-in-up animation-delay-100">
+            where innovation meets construction
+          </p>
+
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl animate-fade-in-up animation-delay-200">
-            From residential homes to commercial complexes, we deliver
-            exceptional construction services with unmatched quality and
-            dedication to every project.
+          <p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
+            Bring your engineering dreams to life.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up animation-delay-300">
-            <Button variant="hero" size="xl">
-              Request a Quote
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-300">
+            <Button variant="accent" size="xl" className="rounded-full">
+              View Our Work
               <ArrowRight className="w-5 h-5" />
             </Button>
-            <Button variant="heroOutline" size="xl">
-              <Play className="w-5 h-5" />
-              View Our Projects
+            <Button variant="outline" size="xl" className="rounded-full border-border hover:bg-muted">
+              Get In Touch
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in-up animation-delay-400">
+          <div className="flex flex-wrap justify-center gap-12 md:gap-20 mt-20 animate-fade-in-up animation-delay-400">
             {[
-              { value: "500+", label: "Projects Completed" },
-              { value: "25+", label: "Years Experience" },
-              { value: "150+", label: "Expert Team" },
-              { value: "98%", label: "Client Satisfaction" },
+              { value: "50+", label: "Projects Completed" },
+              { value: "5+", label: "Years Experience" },
+              { value: "100%", label: "Client Satisfaction" },
             ].map((stat) => (
-              <div key={stat.label} className="text-center lg:text-left">
-                <div className="text-3xl md:text-4xl font-bold text-accent mb-1">
+              <div key={stat.label} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-foreground mb-1">
                   {stat.value}
                 </div>
-                <div className="text-primary-foreground/70 text-sm">
+                <div className="text-muted-foreground text-sm">
                   {stat.label}
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full" />
         </div>
       </div>
     </section>

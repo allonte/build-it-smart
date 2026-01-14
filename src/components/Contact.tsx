@@ -32,17 +32,17 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Construction Ave, Los Angeles, CA 90001",
+      content: "Nairobi, Kenya",
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (234) 567-890",
+      content: "+254 712 345 678",
     },
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@buildcraft.com",
+      content: "info@mazikaengineering.co.ke",
     },
     {
       icon: Clock,
@@ -52,11 +52,11 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-background">
+    <section id="contact" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-semibold uppercase tracking-wider text-sm">
+          <span className="text-primary font-semibold uppercase tracking-wider text-sm">
             Contact Us
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-6">
@@ -70,7 +70,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-card rounded-2xl p-8 shadow-card">
+          <div className="bg-background border border-border rounded-2xl p-8">
             <h3 className="text-xl font-bold text-foreground mb-6">
               Request a Free Quote
             </h3>
@@ -90,7 +90,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="John Doe"
                   />
                 </div>
@@ -108,7 +108,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -128,8 +128,8 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                    placeholder="+1 (234) 567-890"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="+254 712 345 678"
                   />
                 </div>
                 <div>
@@ -144,7 +144,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                    className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     <option value="">Select a service</option>
                     <option value="residential">Residential Construction</option>
@@ -169,12 +169,12 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={4}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-accent resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-card text-foreground focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
-              <Button type="submit" variant="accent" size="lg" className="w-full">
+              <Button type="submit" variant="accent" size="lg" className="w-full rounded-full">
                 Send Message
                 <Send className="w-4 h-4" />
               </Button>
@@ -188,10 +188,10 @@ const Contact = () => {
               {contactInfo.map((info) => (
                 <div
                   key={info.title}
-                  className="bg-card rounded-xl p-6 shadow-card flex gap-4"
+                  className="bg-background border border-border rounded-xl p-6 flex gap-4"
                 >
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
-                    <info.icon className="w-6 h-6 text-accent" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <info.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1">
@@ -204,14 +204,14 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-muted rounded-2xl h-80 flex items-center justify-center overflow-hidden">
+            <div className="bg-background border border-border rounded-2xl h-80 flex items-center justify-center overflow-hidden">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                 <p className="text-muted-foreground">
                   Interactive Map
                   <br />
                   <span className="text-sm">
-                    123 Construction Ave, Los Angeles, CA
+                    Nairobi, Kenya
                   </span>
                 </p>
               </div>

@@ -32,12 +32,12 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-accent rounded-md flex items-center justify-center">
-            <span className="font-heading font-bold text-accent-foreground text-xl">B</span>
+        <a href="#home" className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-gradient-purple rounded-full flex items-center justify-center">
+            <span className="font-heading font-bold text-primary-foreground text-lg">M</span>
           </div>
-          <span className={`font-heading font-bold text-xl ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}>
-            BuildCraft
+          <span className="font-heading font-bold text-lg text-foreground">
+            Mazika Engineering
           </span>
         </a>
 
@@ -47,9 +47,7 @@ const Header = () => {
             <a
               key={item.label}
               href={item.href}
-              className={`font-medium transition-colors hover:text-accent ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
+              className="font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               {item.label}
             </a>
@@ -59,15 +57,13 @@ const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:+1234567890"
-            className={`flex items-center gap-2 font-medium ${
-              isScrolled ? "text-foreground" : "text-primary-foreground"
-            }`}
+            href="tel:+254712345678"
+            className="flex items-center gap-2 font-medium text-foreground/80"
           >
             <Phone className="w-4 h-4" />
-            <span>+1 (234) 567-890</span>
+            <span>+254 712 345 678</span>
           </a>
-          <Button variant={isScrolled ? "accent" : "hero"} size="lg">
+          <Button variant="accent" size="lg">
             Get a Quote
           </Button>
         </div>
@@ -75,7 +71,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden p-2 ${isScrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className="lg:hidden p-2 text-foreground"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -91,7 +87,7 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="font-medium text-foreground hover:text-accent py-2"
+                className="font-medium text-foreground hover:text-primary py-2"
               >
                 {item.label}
               </a>
