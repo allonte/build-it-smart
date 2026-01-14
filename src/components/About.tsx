@@ -1,98 +1,109 @@
-import { Shield, Clock, Users, Award } from "lucide-react";
+import { Shield, Clock, Users, Award, Target, Eye } from "lucide-react";
 
 const About = () => {
-  const features = [
-    {
-      icon: Shield,
-      title: "Safety First",
-      description: "Rigorous safety protocols protecting our workers and your investment.",
-    },
-    {
-      icon: Clock,
-      title: "On-Time Delivery",
-      description: "We respect deadlines and deliver projects as promised, every time.",
-    },
-    {
-      icon: Users,
-      title: "Expert Team",
-      description: "Skilled professionals with decades of combined experience.",
-    },
-    {
-      icon: Award,
-      title: "Quality Certified",
-      description: "ISO certified processes ensuring the highest construction standards.",
-    },
+  const values = [
+    { title: "Quality", description: "Excellence in every project we deliver" },
+    { title: "Safety", description: "Rigorous protocols protecting everyone" },
+    { title: "Teamwork", description: "Collaborative approach to success" },
+    { title: "Innovation", description: "Creative and sustainable solutions" },
   ];
 
   return (
     <section id="about" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
-          <div>
-            <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent">
-              About Us
-            </span>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground mt-4 mb-8">
-              Crafting Excellence in Every Structure
-            </h2>
-            <p className="font-sans text-muted-foreground text-lg leading-relaxed mb-6">
-              Mazika Engineering Limited has been transforming visions into reality.
-              We are a full-service construction company committed to delivering
-              exceptional quality in residential, commercial, and infrastructure
-              projects across Kenya and East Africa.
-            </p>
-            <p className="font-sans text-muted-foreground leading-relaxed mb-8">
-              Our team of experienced architects, engineers, and craftsmen work
-              together to ensure every project meets the highest standards of
-              safety, quality, and sustainability. We believe in building not
-              just structures, but lasting relationships with our clients.
-            </p>
+        {/* Overview */}
+        <div className="max-w-4xl mx-auto text-center mb-20">
+          <span className="font-sans text-xs tracking-[0.3em] uppercase text-accent">
+            Overview
+          </span>
+          <p className="font-serif text-xl md:text-2xl text-foreground mt-6 leading-relaxed">
+            Beautiful, functional buildings, interiors and landscapes are achieved through a disciplined approach involving rigorous analysis of purpose, sensitive understanding of the environment, creation of coherent spaces and meticulous detailing.
+          </p>
+          <p className="font-sans text-muted-foreground mt-6 leading-relaxed">
+            Employing a design philosophy with a focus on innovative and sustainable ideas, substantive intentions, and an understanding of the human need. We are a team of Engineers, Designers, Architects, Interior Designers, Construction Project Managers, Real Estate professionals, and Visualizers with a keen interest in helping you conceive and create buildings, interiors, and landscapes that adhere to the essential elements of successful developments.
+          </p>
+        </div>
 
-            {/* Features Grid */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature) => (
-                <div
-                  key={feature.title}
-                  className="flex gap-4 p-5 border border-border hover:border-accent/50 transition-colors"
-                >
-                  <div className="w-12 h-12 border border-accent/30 flex items-center justify-center shrink-0">
-                    <feature.icon className="w-5 h-5 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-sans font-medium text-foreground mb-1 tracking-wide">
-                      {feature.title}
-                    </h3>
-                    <p className="font-sans text-muted-foreground text-sm leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Mission & Vision */}
+          <div className="space-y-12">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 border border-accent flex items-center justify-center">
+                  <Target className="w-5 h-5 text-accent" />
                 </div>
-              ))}
+                <h3 className="font-serif text-2xl text-foreground">Our Mission</h3>
+              </div>
+              <p className="font-sans text-muted-foreground leading-relaxed">
+                Our mission is to provide quality service both personally, professionally, and in practice with a non-adversarial approach. We believe in offering innovative, creative, and sustainable solutions in the design and build environment to our clients.
+              </p>
+            </div>
+
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 border border-accent flex items-center justify-center">
+                  <Eye className="w-5 h-5 text-accent" />
+                </div>
+                <h3 className="font-serif text-2xl text-foreground">Our Vision</h3>
+              </div>
+              <p className="font-sans text-muted-foreground leading-relaxed">
+                Our vision is to be the best company in architecture design, interior design, 3D rendering, project management, and development in East Africa.
+              </p>
+            </div>
+
+            {/* Values */}
+            <div>
+              <h3 className="font-serif text-2xl text-foreground mb-6">Our Values</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {values.map((value) => (
+                  <div key={value.title} className="border border-border p-4 hover:border-accent/50 transition-colors">
+                    <h4 className="font-sans font-medium text-foreground mb-1">{value.title}</h4>
+                    <p className="font-sans text-muted-foreground text-sm">{value.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Stats Grid */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="space-y-6">
-                <div className="h-48 border border-accent bg-card flex flex-col items-center justify-center">
-                  <span className="font-serif text-6xl text-accent">5+</span>
-                  <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">Years</span>
+          {/* Team Composition */}
+          <div>
+            <h3 className="font-serif text-2xl text-foreground mb-6">We Are a Professional Team</h3>
+            <p className="font-sans text-muted-foreground mb-8 leading-relaxed">
+              Our diverse team brings together expertise from multiple engineering and design disciplines:
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                "Civil Engineers",
+                "Mechanical Engineers",
+                "Electrical Engineers",
+                "Software Engineers",
+                "Surveyors",
+                "Architects",
+                "Quantity Surveyors",
+                "Visualizers",
+              ].map((role) => (
+                <div key={role} className="flex items-center gap-3 py-3 border-b border-border">
+                  <div className="w-1.5 h-1.5 bg-accent" />
+                  <span className="font-sans text-foreground text-sm">{role}</span>
                 </div>
-                <div className="h-56 border border-border bg-card flex flex-col items-center justify-center">
-                  <span className="font-serif text-6xl text-foreground">50+</span>
-                  <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">Projects</span>
+              ))}
+            </div>
+
+            {/* Certifications Preview */}
+            <div className="mt-10 bg-card border border-border p-6">
+              <h4 className="font-sans text-xs tracking-[0.2em] uppercase text-accent mb-4">Certifications</h4>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="font-sans text-sm text-foreground">NCA Registered</span>
+                  <span className="font-sans text-xs text-muted-foreground">Category NCA 8</span>
                 </div>
-              </div>
-              <div className="space-y-6 pt-12">
-                <div className="h-56 border border-border bg-card flex flex-col items-center justify-center">
-                  <span className="font-serif text-6xl text-foreground">20+</span>
-                  <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">Team Members</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-sans text-sm text-foreground">Incorporated</span>
+                  <span className="font-sans text-xs text-muted-foreground">March 2021</span>
                 </div>
-                <div className="h-48 border border-border bg-muted flex flex-col items-center justify-center">
-                  <span className="font-serif text-6xl text-foreground">100%</span>
-                  <span className="font-sans text-xs tracking-[0.2em] uppercase text-muted-foreground mt-2">Satisfaction</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-sans text-sm text-foreground">KRA Registered</span>
+                  <span className="font-sans text-xs text-muted-foreground">PIN: P052001159M</span>
                 </div>
               </div>
             </div>
