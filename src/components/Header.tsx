@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import logoMazika from "@/assets/logo-mazika.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -31,13 +32,8 @@ const Header = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center">
-            <span className="font-display text-sm font-bold text-primary">M</span>
-          </div>
-          <span className="font-display text-lg font-semibold text-foreground">
-            Mazika
-          </span>
+        <a href="#home" className="flex items-center">
+          <img src={logoMazika} alt="Mazika Design and Build" className="h-12 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
