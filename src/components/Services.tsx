@@ -34,11 +34,11 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
+    <section id="services" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-accent font-semibold uppercase tracking-wider text-sm">
+          <span className="text-primary font-semibold uppercase tracking-wider text-sm">
             Our Services
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-6">
@@ -55,12 +55,12 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group bg-card rounded-2xl p-8 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+              className="group bg-background border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Icon */}
-              <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent transition-colors duration-300">
-                <service.icon className="w-8 h-8 text-accent group-hover:text-accent-foreground transition-colors duration-300" />
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gradient-purple transition-colors duration-300">
+                <service.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
               </div>
 
               {/* Content */}
@@ -76,16 +76,16 @@ const Services = () => {
                     key={feature}
                     className="flex items-center gap-2 text-sm text-foreground"
                   >
-                    <div className="w-1.5 h-1.5 bg-accent rounded-full" />
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full" />
                     {feature}
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
-              <Button variant="ghost" className="group/btn p-0 h-auto hover:bg-transparent">
+              <Button variant="ghost" className="p-0 h-auto hover:bg-transparent">
                 Learn More
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
           ))}
