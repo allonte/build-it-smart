@@ -1,14 +1,17 @@
 import { ArrowRight, ChevronDown, Building2, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMazika from "@/assets/logo-mazika.png";
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const stats = [
@@ -25,55 +28,49 @@ const Hero = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float animation-delay-300" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float animation-delay-300" />
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(40_15%_18%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(40_15%_18%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(240_10%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(240_10%_20%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
         
         {/* Radial Gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(42_85%_55%/0.05)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(270_70%_60%/0.08)_0%,transparent_70%)]" />
       </div>
 
       {/* Content */}
       <div className="relative container mx-auto px-6 pt-24 pb-12">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Logo Animation */}
-          <div className="mb-8 animate-fade-in">
-            <img 
-              src={logoMazika} 
-              alt="Mazika Design and Build" 
-              className="h-24 md:h-32 w-auto mx-auto glow-gold"
-            />
-          </div>
-
-          {/* Main Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight mb-6 animate-fade-in-up animation-delay-200">
-            <span className="text-foreground">Building </span>
-            <span className="text-gradient-gold">Dreams</span>
-            <br />
-            <span className="text-foreground">Into </span>
-            <span className="text-gradient-gold">Reality</span>
+          {/* Company Name - Like Ballan */}
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight mb-4 animate-fade-in-up">
+            <span className="text-foreground">MAZIKA</span>
           </h1>
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-primary mb-8 animate-fade-in-up animation-delay-200">
+            ENGINEERING
+          </h2>
+
+          {/* Tagline */}
+          <p className="font-sans text-xl md:text-2xl text-foreground mb-4 animate-fade-in-up animation-delay-300">
+            where design meets innovation
+          </p>
 
           {/* Subheadline */}
           <p className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-400 leading-relaxed">
-            Premier design, engineering, and construction services in East Africa. 
-            We transform your vision into exceptional architectural masterpieces.
+            Bring your construction ideas to life.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Like Ballan */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-500">
             <Button 
-              onClick={scrollToContact}
+              onClick={scrollToProjects}
               size="xl" 
-              className="rounded-full bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold hover:shadow-gold-lg transition-all duration-300 px-8"
+              className="rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-primary hover:shadow-primary-lg transition-all duration-300 px-8"
             >
               View Our Work
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button 
-              onClick={scrollToAbout}
+              onClick={scrollToContact}
               variant="outline" 
               size="xl"
               className="rounded-full border-border bg-card/80 text-foreground hover:bg-card px-8"
@@ -82,27 +79,18 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats Marquee */}
-          <div className="overflow-hidden max-w-4xl mx-auto animate-fade-in-up animation-delay-700">
-            <div className="flex animate-marquee gap-8">
-              {[...stats, ...stats, ...stats].map((stat, index) => (
-                <div 
-                  key={index}
-                  className="group relative flex-shrink-0 p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 min-w-[200px] md:min-w-[240px]"
-                >
-                  <div className="absolute inset-0 bg-gradient-gold-soft opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
-                  <div className="relative text-center">
-                    <stat.icon className="w-6 h-6 text-primary mx-auto mb-3" />
-                    <div className="font-display text-3xl md:text-4xl text-gradient-gold mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="font-sans text-xs md:text-sm text-muted-foreground">
-                      {stat.label}
-                    </div>
-                  </div>
+          {/* Stats - Simple row like Ballan */}
+          <div className="flex flex-wrap justify-center gap-12 md:gap-20 animate-fade-in-up animation-delay-700">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="font-display text-4xl md:text-5xl text-foreground mb-2">
+                  {stat.value}
                 </div>
-              ))}
-            </div>
+                <div className="font-sans text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

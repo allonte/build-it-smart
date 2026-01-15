@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoMazika from "@/assets/logo-mazika.png";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -37,9 +36,12 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Text Based like Ballan */}
         <a href="#home" className="flex items-center gap-3">
-          <img src={logoMazika} alt="Mazika Design and Build" className="h-10 md:h-12 w-auto" />
+          <div className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center">
+            <span className="font-display text-lg font-bold text-primary-foreground">M</span>
+          </div>
+          <span className="font-display text-xl text-foreground">Mazika Engineering</span>
         </a>
 
         {/* Desktop Navigation - Right aligned */}
@@ -81,7 +83,7 @@ const Header = () => {
             ))}
             <Button 
               onClick={scrollToContact}
-              className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold mt-2"
+              className="bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-primary mt-2 rounded-full"
             >
               Get a Quote
             </Button>
