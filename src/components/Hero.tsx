@@ -82,25 +82,27 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-700">
-            {stats.map((stat, index) => (
-              <div 
-                key={stat.label}
-                className="group relative p-4 md:p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-gold-soft opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
-                <div className="relative">
-                  <stat.icon className="w-6 h-6 text-primary mx-auto mb-2 md:mb-3" />
-                  <div className="font-display text-2xl md:text-4xl text-gradient-gold mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="font-sans text-xs md:text-sm text-muted-foreground">
-                    {stat.label}
+          {/* Stats Marquee */}
+          <div className="overflow-hidden max-w-4xl mx-auto animate-fade-in-up animation-delay-700">
+            <div className="flex animate-marquee gap-8">
+              {[...stats, ...stats, ...stats].map((stat, index) => (
+                <div 
+                  key={index}
+                  className="group relative flex-shrink-0 p-6 md:p-8 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 min-w-[200px] md:min-w-[240px]"
+                >
+                  <div className="absolute inset-0 bg-gradient-gold-soft opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300" />
+                  <div className="relative text-center">
+                    <stat.icon className="w-6 h-6 text-primary mx-auto mb-3" />
+                    <div className="font-display text-3xl md:text-4xl text-gradient-gold mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="font-sans text-xs md:text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
