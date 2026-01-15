@@ -6,7 +6,20 @@ const Team = () => {
     name: "Eng. Mark Onyango Kaoga",
     role: "Founder & Civil Engineer",
     experience: "5+ years",
-    description: "BSc Civil and Structural Engineering from Masinde Muliro University. Registered member of EBK with expertise in structural design, project management, and construction supervision across Kenya.",
+    bio: "A Civil & Structural Engineer with over 5 years of experience in the Construction industry. A holder of Bachelor of Science, BSc Civil and Structural Engineering (2011-2016) from the Masinde Muliro University of Science & Technology.",
+    competencies: [
+      "Topographical Survey",
+      "Civil and Structural design and use of CAD applications",
+      "Health and Safety"
+    ],
+    responsibilities: [
+      "Structural Design & Detailing",
+      "Scheduling and Cost management",
+      "Tender Document preparation"
+    ],
+    memberships: [
+      "Engineers of Kenya (EBK)"
+    ],
     image: teamMark,
   };
 
@@ -54,8 +67,8 @@ const Team = () => {
             </div>
 
             {/* Info */}
-            <div className="p-8 -mt-16 relative text-center">
-              <div className="mb-4">
+            <div className="p-8 -mt-16 relative">
+              <div className="mb-6 text-center">
                 <h3 className="font-display text-2xl text-foreground mb-2">
                   {founder.name}
                 </h3>
@@ -64,9 +77,48 @@ const Team = () => {
                 </p>
               </div>
               
-              <p className="font-sans text-muted-foreground text-sm leading-relaxed">
-                {founder.description}
+              <p className="font-sans text-muted-foreground text-sm leading-relaxed mb-6">
+                {founder.bio}
               </p>
+
+              {/* Competencies */}
+              <div className="mb-4">
+                <h4 className="font-sans text-xs uppercase tracking-widest text-primary mb-2">Core Competencies</h4>
+                <ul className="space-y-1">
+                  {founder.competencies.map((item, idx) => (
+                    <li key={idx} className="font-sans text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Responsibilities */}
+              <div className="mb-4">
+                <h4 className="font-sans text-xs uppercase tracking-widest text-primary mb-2">Responsible For</h4>
+                <ul className="space-y-1">
+                  {founder.responsibilities.map((item, idx) => (
+                    <li key={idx} className="font-sans text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Memberships */}
+              <div>
+                <h4 className="font-sans text-xs uppercase tracking-widest text-primary mb-2">Registered Member Of</h4>
+                <ul className="space-y-1">
+                  {founder.memberships.map((item, idx) => (
+                    <li key={idx} className="font-sans text-muted-foreground text-sm flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
