@@ -32,39 +32,28 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-xl border-b border-border py-3"
+          ? "bg-background/95 backdrop-blur-xl py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center">
+        <a href="#home" className="flex items-center gap-3">
           <img src={logoMazika} alt="Mazika Design and Build" className="h-10 md:h-12 w-auto" />
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Desktop Navigation - Right aligned */}
+        <nav className="hidden lg:flex items-center gap-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors relative group"
+              className="font-sans text-sm text-foreground/80 hover:text-foreground transition-colors"
             >
               {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-gold group-hover:w-full transition-all duration-300" />
             </a>
           ))}
         </nav>
-
-        {/* CTA Button */}
-        <div className="hidden lg:block">
-          <Button 
-            onClick={scrollToContact}
-            className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold"
-          >
-            Get a Quote
-          </Button>
-        </div>
 
         {/* Mobile Menu Button */}
         <button

@@ -67,18 +67,18 @@ const Hero = () => {
             <Button 
               onClick={scrollToContact}
               size="xl" 
-              className="bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold hover:shadow-gold-lg transition-all duration-300"
+              className="rounded-full bg-gradient-gold text-primary-foreground hover:opacity-90 shadow-gold hover:shadow-gold-lg transition-all duration-300 px-8"
             >
-              Start Your Project
+              View Our Work
               <ArrowRight className="w-5 h-5" />
             </Button>
             <Button 
               onClick={scrollToAbout}
               variant="outline" 
               size="xl"
-              className="border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary/50"
+              className="rounded-full border-border bg-card/80 text-foreground hover:bg-card px-8"
             >
-              Explore Our Work
+              Get In Touch
             </Button>
           </div>
 
