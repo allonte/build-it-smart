@@ -1,6 +1,5 @@
 import { Eye, Shield, Lightbulb, Users, Sparkles } from "lucide-react";
 import missionIcon from "@/assets/mission-icon.png";
-import aboutImage from "@/assets/about-blueprints.jpg";
 
 const About = () => {
   const values = [
@@ -44,15 +43,6 @@ const About = () => {
             involving rigorous analysis of purpose, sensitive understanding of the environment, creation of 
             coherent spaces and meticulous detailing.
           </p>
-        </div>
-
-        {/* Featured Image */}
-        <div className="mb-16 rounded-3xl overflow-hidden">
-          <img 
-            src={aboutImage} 
-            alt="Construction blueprints and helmet" 
-            className="w-full h-64 md:h-80 object-cover"
-          />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
