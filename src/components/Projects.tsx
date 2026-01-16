@@ -5,6 +5,11 @@ import projectDrainage from "@/assets/project-drainage.jpg";
 import projectExcavation from "@/assets/project-excavation.jpg";
 import projectSlab from "@/assets/project-slab.jpg";
 import projectInterior from "@/assets/project-interior.jpg";
+import projectRoadwork from "@/assets/project-roadwork-1.jpg";
+import projectTarmac from "@/assets/project-tarmac.jpg";
+import projectBuilding from "@/assets/project-building-1.jpg";
+import projectMansion from "@/assets/project-mansion.jpg";
+import projectModernHouse from "@/assets/project-modern-house.jpg";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -13,7 +18,7 @@ const Projects = () => {
     { id: "all", label: "All Projects" },
     { id: "infrastructure", label: "Infrastructure" },
     { id: "construction", label: "Construction" },
-    { id: "interior", label: "Interior" },
+    { id: "residential", label: "Residential" },
   ];
 
   const projects = [
@@ -23,7 +28,7 @@ const Projects = () => {
       category: "infrastructure",
       location: "Mombasa County",
       image: projectDrainage,
-      value: "KES 45M",
+      value: "KES 15M",
     },
     {
       id: 2,
@@ -31,7 +36,7 @@ const Projects = () => {
       category: "infrastructure",
       location: "Kilifi County",
       image: projectExcavation,
-      value: "KES 120M",
+      value: "KES 18M",
     },
     {
       id: 3,
@@ -39,15 +44,55 @@ const Projects = () => {
       category: "construction",
       location: "Nairobi, Kenya",
       image: projectSlab,
-      value: "KES 85M",
+      value: "KES 12M",
     },
     {
       id: 4,
       title: "Premium Interior Design",
-      category: "interior",
+      category: "construction",
       location: "Karen, Nairobi",
       image: projectInterior,
-      value: "KES 35M",
+      value: "KES 10M",
+    },
+    {
+      id: 5,
+      title: "Road Stone Masonry Works",
+      category: "infrastructure",
+      location: "Kisumu County",
+      image: projectRoadwork,
+      value: "KES 14M",
+    },
+    {
+      id: 6,
+      title: "Tarmac Road Construction",
+      category: "infrastructure",
+      location: "Busia County",
+      image: projectTarmac,
+      value: "KES 20M",
+    },
+    {
+      id: 7,
+      title: "Residential Building Project",
+      category: "residential",
+      location: "Kitengela, Kajiado",
+      image: projectBuilding,
+      value: "KES 16M",
+    },
+    {
+      id: 8,
+      title: "Luxury Mansion Development",
+      category: "residential",
+      location: "Athi River, Machakos",
+      image: projectMansion,
+      value: "KES 18M",
+    },
+    {
+      id: 9,
+      title: "Modern House Design & Build",
+      category: "residential",
+      location: "Karen, Nairobi",
+      image: projectModernHouse,
+      value: "KES 20M",
     },
   ];
 

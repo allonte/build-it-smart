@@ -1,5 +1,7 @@
 import { ArrowRight, Building2, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import CountingNumber from "@/components/CountingNumber";
+import heroBackground from "@/assets/hero-construction.jpg";
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -10,32 +12,33 @@ const Hero = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const stats = [
-    { icon: Building2, value: "150+", label: "Projects Completed" },
-    { icon: Users, value: "100+", label: "Happy Clients" },
-    { icon: Award, value: "5+", label: "Years Excellence" },
+    { icon: Building2, value: 150, suffix: "+", label: "Projects Completed" },
+    { icon: Users, value: 100, suffix: "+", label: "Happy Clients" },
+    { icon: Award, value: 5, suffix: "+", label: "Years Excellence" },
   ];
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroBackground} 
+          alt="Construction site at sunset" 
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-background/80" />
+        
         {/* Gradient Orbs */}
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float animation-delay-300" />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(240_10%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(240_10%_20%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
-        
-        {/* Radial Gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(270_70%_60%/0.08)_0%,transparent_70%)]" />
       </div>
 
       {/* Content */}
@@ -84,7 +87,7 @@ const Hero = () => {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="font-display text-4xl md:text-5xl text-foreground mb-2">
-                  {stat.value}
+                  <CountingNumber value={stat.value} suffix={stat.suffix} duration={2500} />
                 </div>
                 <div className="font-sans text-sm text-muted-foreground">
                   {stat.label}

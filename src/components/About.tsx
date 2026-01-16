@@ -1,4 +1,5 @@
-import { Target, Eye, Shield, Lightbulb, Users, Sparkles } from "lucide-react";
+import { Eye, Shield, Lightbulb, Users, Sparkles } from "lucide-react";
+import missionIcon from "@/assets/mission-icon.png";
 
 const About = () => {
   const values = [
@@ -50,8 +51,8 @@ const About = () => {
             {/* Mission */}
             <div className="group p-8 rounded-3xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-500">
               <div className="flex items-center gap-4 mb-5">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold">
-                  <Target className="w-6 h-6 text-primary-foreground" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-gold flex items-center justify-center shadow-gold p-2">
+                  <img src={missionIcon} alt="Mission" className="w-full h-full object-contain invert" />
                 </div>
                 <h3 className="font-display text-2xl text-foreground">Our Mission</h3>
               </div>
