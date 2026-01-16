@@ -60,9 +60,9 @@ const Hero = () => {
           Building the future with precision and integrity. We transform your construction dreams into exceptional realities with world-class craftsmanship.
         </motion.p>
 
-        {/* CTA Link */}
+        {/* CTA Links */}
         <motion.div 
-          className="mb-16"
+          className="flex items-center gap-8 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -72,6 +72,12 @@ const Hero = () => {
             className="font-sans text-sm tracking-wider uppercase text-foreground border-b-2 border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
           >
             View Our Work
+          </button>
+          <button 
+            onClick={scrollToContact}
+            className="font-sans text-sm tracking-wider uppercase text-foreground border-b-2 border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
+          >
+            Get a Quote
           </button>
         </motion.div>
 
