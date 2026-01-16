@@ -1,4 +1,5 @@
 import { Building2, Home, Wrench, Hammer, Zap, Droplets, Sun, Calculator, Layers, Cog, ArrowRight } from "lucide-react";
+import servicesImage from "@/assets/services-construction.jpg";
 
 const Services = () => {
   const services = [
@@ -85,6 +86,15 @@ const Services = () => {
             From concept to completion, we offer a full range of design, engineering, and construction 
             services tailored to meet your unique needs.
           </p>
+        </div>
+
+        {/* Featured Image */}
+        <div className="mb-16 rounded-3xl overflow-hidden">
+          <img 
+            src={servicesImage} 
+            alt="Construction site in progress" 
+            className="w-full h-64 md:h-80 object-cover"
+          />
         </div>
 
         {/* Services Grid */}

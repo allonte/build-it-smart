@@ -10,6 +10,10 @@ const Hero = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev % totalSlides) + 1);
   };
@@ -56,16 +60,24 @@ const Hero = () => {
             exceptional realities with world-class craftsmanship.
           </p>
 
-          {/* CTA Button */}
-          <button 
-            onClick={scrollToProjects}
-            className="group flex items-center gap-3 text-white font-sans text-sm tracking-wider uppercase animate-fade-in-up animation-delay-400"
-          >
-            <span className="relative">
-              Take A Look
-              <span className="absolute bottom-0 left-0 w-full h-px bg-white origin-left transition-transform duration-300 group-hover:scale-x-110" />
-            </span>
-          </button>
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-4 animate-fade-in-up animation-delay-400">
+            <button 
+              onClick={scrollToProjects}
+              className="group flex items-center gap-3 text-white font-sans text-sm tracking-wider uppercase"
+            >
+              <span className="relative">
+                Take A Look
+                <span className="absolute bottom-0 left-0 w-full h-px bg-white origin-left transition-transform duration-300 group-hover:scale-x-110" />
+              </span>
+            </button>
+            <button 
+              onClick={scrollToContact}
+              className="px-6 py-3 bg-primary text-primary-foreground font-sans text-sm tracking-wider uppercase rounded-full hover:bg-primary/90 transition-colors"
+            >
+              Get in Touch
+            </button>
+          </div>
         </div>
       </div>
 
