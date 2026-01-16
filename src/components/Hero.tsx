@@ -35,19 +35,67 @@ const Hero = () => {
           Where Design Meets Innovation
         </motion.p>
 
-        {/* Main Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-        >
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-foreground">
-            MAZIKA
+        {/* Main Headline with slow-motion letter animation */}
+        <div>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-foreground flex overflow-hidden">
+            {"MAZIKA".split("").map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ 
+                  opacity: 0, 
+                  y: index % 2 === 0 ? -100 : 100,
+                  x: index % 3 === 0 ? -50 : index % 3 === 1 ? 50 : 0,
+                  rotateX: 90,
+                  scale: 0.5
+                }}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0,
+                  x: 0,
+                  rotateX: 0,
+                  scale: 1
+                }}
+                transition={{ 
+                  duration: 1.2, 
+                  delay: 0.3 + index * 0.15, 
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
           </h1>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-primary mt-2">
-            ENGINEERING
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-primary mt-2 flex overflow-hidden">
+            {"ENGINEERING".split("").map((letter, index) => (
+              <motion.span
+                key={index}
+                initial={{ 
+                  opacity: 0, 
+                  y: index % 2 === 0 ? 100 : -100,
+                  x: index % 3 === 0 ? 50 : index % 3 === 1 ? -50 : 0,
+                  rotateY: -90,
+                  scale: 0.3
+                }}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0,
+                  x: 0,
+                  rotateY: 0,
+                  scale: 1
+                }}
+                transition={{ 
+                  duration: 1.4, 
+                  delay: 1.2 + index * 0.1, 
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
           </h2>
-        </motion.div>
+        </div>
 
         {/* Description */}
         <motion.p 
