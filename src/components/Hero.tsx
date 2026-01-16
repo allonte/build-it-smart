@@ -121,6 +121,9 @@ const Hero = () => {
           src={heroBackground} 
           alt="Construction site at sunset" 
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         {/* Gradient overlay for blend */}
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent" />
@@ -132,6 +135,9 @@ const Hero = () => {
           src={heroBackground} 
           alt="Construction site at sunset" 
           className="w-full h-full object-cover opacity-20"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-background/90" />
       </div>
