@@ -1,111 +1,104 @@
-import { ArrowRight, Building2, Users, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import CountingNumber from "@/components/CountingNumber";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useState } from "react";
 import heroBackground from "@/assets/hero-construction.jpg";
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(1);
+  const totalSlides = 3;
+
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev % totalSlides) + 1);
   };
 
-  const stats = [
-    { icon: Building2, value: 150, suffix: "+", label: "Projects Completed" },
-    { icon: Users, value: 100, suffix: "+", label: "Happy Clients" },
-    { icon: Award, value: 5, suffix: "+", label: "Years Excellence" },
-  ];
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 1 ? totalSlides : prev - 1));
+  };
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0a1628] via-[#1a2a4a] to-[#2a3a5a]"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/70 to-transparent z-10" />
+      
+      {/* Hero Image - Right side */}
+      <div className="absolute right-0 top-0 bottom-0 w-full md:w-3/5 lg:w-1/2">
         <img 
           src={heroBackground} 
-          alt="Construction site at sunset" 
+          alt="Construction excellence" 
           className="w-full h-full object-cover"
         />
-        {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-background/80" />
-        
-        {/* Gradient Orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float animation-delay-300" />
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(240_10%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(240_10%_20%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628] via-[#0a1628]/50 to-transparent" />
       </div>
 
-      {/* Content */}
-      <div className="relative container mx-auto px-6 pt-24 pb-12">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Company Name - Like Ballan */}
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight mb-4 animate-fade-in-up">
-            <span className="text-foreground">MAZIKA</span>
+      {/* Content - Left side */}
+      <div className="relative z-20 container mx-auto px-6 md:px-12 lg:px-20 pt-24">
+        <div className="max-w-xl">
+          {/* Small Label */}
+          <p className="text-primary font-sans text-sm md:text-base tracking-[0.3em] uppercase mb-4 animate-fade-in-up">
+            Our Vision
+          </p>
+
+          {/* Large Heading */}
+          <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] mb-6 animate-fade-in-up animation-delay-200">
+            <span className="text-white">BUILD</span>
           </h1>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-primary mb-8 animate-fade-in-up animation-delay-200">
-            ENGINEERING
-          </h2>
 
-          {/* Tagline */}
-          <p className="font-sans text-xl md:text-2xl text-foreground mb-4 animate-fade-in-up animation-delay-300">
-            where design meets innovation
+          {/* Description */}
+          <p className="font-sans text-base md:text-lg text-white/70 max-w-md mb-8 leading-relaxed animate-fade-in-up animation-delay-300">
+            Building the future with precision and integrity. 
+            We transform your construction dreams into 
+            exceptional realities with world-class craftsmanship.
           </p>
 
-          {/* Subheadline */}
-          <p className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-400 leading-relaxed">
-            Bring your construction ideas to life.
-          </p>
-
-          {/* CTA Buttons - Like Ballan */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-500">
-            <Button 
-              onClick={scrollToProjects}
-              size="xl" 
-              className="rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-primary hover:shadow-primary-lg transition-all duration-300 px-8"
-            >
-              View Our Work
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button 
-              onClick={scrollToContact}
-              variant="outline" 
-              size="xl"
-              className="rounded-full border-border bg-card/80 text-foreground hover:bg-card px-8"
-            >
-              Get In Touch
-            </Button>
-          </div>
-
-          {/* Stats - Simple row like Ballan */}
-          <div className="flex flex-wrap justify-center gap-12 md:gap-20 animate-fade-in-up animation-delay-700">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-display text-4xl md:text-5xl text-foreground mb-2">
-                  <CountingNumber value={stat.value} suffix={stat.suffix} duration={2500} />
-                </div>
-                <div className="font-sans text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* CTA Button */}
+          <button 
+            onClick={scrollToProjects}
+            className="group flex items-center gap-3 text-white font-sans text-sm tracking-wider uppercase animate-fade-in-up animation-delay-400"
+          >
+            <span className="relative">
+              Take A Look
+              <span className="absolute bottom-0 left-0 w-full h-px bg-white origin-left transition-transform duration-300 group-hover:scale-x-110" />
+            </span>
+          </button>
         </div>
+      </div>
 
-        {/* View Our Work Marquee */}
-        <div className="absolute bottom-8 left-0 right-0 overflow-hidden">
-          <div className="flex animate-marquee-reverse whitespace-nowrap">
-            {[...Array(6)].map((_, i) => (
-              <span key={i} className="mx-8 font-display text-lg tracking-[0.3em] uppercase text-muted-foreground/60">
-                View Our Work • Explore Projects • View Our Work • Explore Projects •
-              </span>
-            ))}
+      {/* Bottom Navigation */}
+      <div className="absolute bottom-8 left-0 right-0 z-20 px-6 md:px-12 lg:px-20">
+        <div className="container mx-auto flex items-center justify-between">
+          {/* Navigation Arrows */}
+          <button 
+            onClick={prevSlide}
+            className="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </button>
+
+          {/* Slide Indicator */}
+          <div className="flex items-center gap-4 text-white font-sans text-sm">
+            <span>0{currentSlide}</span>
+            <div className="w-24 md:w-40 h-px bg-white/30 relative">
+              <div 
+                className="absolute top-0 left-0 h-full bg-white transition-all duration-500"
+                style={{ width: `${(currentSlide / totalSlides) * 100}%` }}
+              />
+            </div>
+            <span>0{totalSlides}</span>
           </div>
+
+          {/* Next Arrow */}
+          <button 
+            onClick={nextSlide}
+            className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            <ArrowRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </section>
