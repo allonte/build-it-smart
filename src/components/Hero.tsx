@@ -37,23 +37,18 @@ const Hero = () => {
         </motion.p>
 
         {/* Main Headline */}
-        <motion.h1 
-          className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] mb-8 text-foreground"
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
         >
-          MAZIKA
-        </motion.h1>
-
-        <motion.h2 
-          className="font-display text-4xl sm:text-5xl md:text-6xl text-gradient-primary mb-8"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-        >
-          ENGINEERING
-        </motion.h2>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-foreground">
+            MAZIKA
+          </h1>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-primary mt-2">
+            ENGINEERING
+          </h2>
+        </motion.div>
 
         {/* Description */}
         <motion.p 
