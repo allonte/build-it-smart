@@ -1,5 +1,4 @@
-import { ArrowRight, ArrowLeft, Building2, Users, Award } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Building2, Users, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import CountingNumber from "@/components/CountingNumber";
 import heroBackground from "@/assets/hero-construction.jpg";
@@ -81,37 +80,6 @@ const Hero = () => {
           </button>
         </motion.div>
 
-        {/* Navigation Controls */}
-        <motion.div 
-          className="flex items-center gap-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-        >
-          {/* Arrow Buttons */}
-          <div className="flex items-center gap-4">
-            <button 
-              className="w-12 h-12 rounded-full border border-muted-foreground/30 flex items-center justify-center text-muted-foreground hover:border-foreground hover:text-foreground transition-colors duration-300"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={scrollToProjects}
-              className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:bg-primary/90 transition-colors duration-300"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Stats Indicator */}
-          <div className="flex items-center gap-4 text-muted-foreground">
-            <span className="font-display text-lg">01</span>
-            <div className="w-24 h-[1px] bg-muted-foreground/30 relative">
-              <div className="absolute left-0 top-0 h-full w-1/3 bg-foreground" />
-            </div>
-            <span className="font-display text-lg">03</span>
-          </div>
-        </motion.div>
 
         {/* Stats Row */}
         <motion.div 
