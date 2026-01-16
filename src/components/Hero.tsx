@@ -1,5 +1,6 @@
 import { ArrowRight, Building2, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import CountingNumber from "@/components/CountingNumber";
 import heroBackground from "@/assets/hero-construction.jpg";
 
@@ -21,7 +22,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -38,32 +39,57 @@ const Hero = () => {
         <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float animation-delay-300" />
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(240_10%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(240_10%_20%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(215_15%_20%/0.1)_1px,transparent_1px),linear-gradient(to_bottom,hsl(215_15%_20%/0.1)_1px,transparent_1px)] bg-[size:60px_60px]" />
       </div>
 
       {/* Content */}
       <div className="relative container mx-auto px-6 pt-24 pb-12">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Company Name - Like Ballan */}
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight mb-4 animate-fade-in-up">
+        <div className="max-w-5xl">
+          {/* Company Name */}
+          <motion.h1 
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-tight mb-4 text-left"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <span className="text-foreground">MAZIKA</span>
-          </h1>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-primary mb-8 animate-fade-in-up animation-delay-200">
+          </motion.h1>
+          <motion.h2 
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gradient-primary mb-8 text-left"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             ENGINEERING
-          </h2>
+          </motion.h2>
 
           {/* Tagline */}
-          <p className="font-sans text-xl md:text-2xl text-foreground mb-4 animate-fade-in-up animation-delay-300">
+          <motion.p 
+            className="font-sans text-xl md:text-2xl text-foreground mb-4 text-left"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             where design meets innovation
-          </p>
+          </motion.p>
 
           {/* Subheadline */}
-          <p className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-in-up animation-delay-400 leading-relaxed">
+          <motion.p 
+            className="font-sans text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 text-left leading-relaxed"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             Bring your construction ideas to life.
-          </p>
+          </motion.p>
 
-          {/* CTA Buttons - Like Ballan */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up animation-delay-500">
+          {/* CTA Buttons */}
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-start mb-16"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <Button 
               onClick={scrollToProjects}
               size="xl" 
@@ -80,12 +106,17 @@ const Hero = () => {
             >
               Get In Touch
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Stats - Simple row like Ballan */}
-          <div className="flex flex-wrap justify-center gap-12 md:gap-20 animate-fade-in-up animation-delay-700">
+          {/* Stats */}
+          <motion.div 
+            className="flex flex-wrap justify-start gap-12 md:gap-20"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
+              <div key={stat.label} className="text-left">
                 <div className="font-display text-4xl md:text-5xl text-foreground mb-2">
                   <CountingNumber value={stat.value} suffix={stat.suffix} duration={2500} />
                 </div>
@@ -94,7 +125,7 @@ const Hero = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* View Our Work Marquee */}
