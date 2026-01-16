@@ -11,6 +11,11 @@ import projectTarmac from "@/assets/project-tarmac.jpg";
 import projectBuilding from "@/assets/project-building-1.jpg";
 import projectMansion from "@/assets/project-mansion.jpg";
 import projectModernHouse from "@/assets/project-modern-house.jpg";
+import projectLuxuryHouse from "@/assets/project-luxury-house.jpg";
+import projectFoundation from "@/assets/project-foundation.jpg";
+import projectKitchen from "@/assets/project-kitchen.jpg";
+import projectLivingRoom from "@/assets/project-living-room.jpg";
+import projectBuildingProgress from "@/assets/project-building-progress.jpg";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -94,6 +99,46 @@ const Projects = () => {
       location: "Karen, Nairobi",
       image: projectModernHouse,
       value: "KES 20M",
+    },
+    {
+      id: 10,
+      title: "Contemporary Luxury Residence",
+      category: "residential",
+      location: "Runda, Nairobi",
+      image: projectLuxuryHouse,
+      value: "KES 25M",
+    },
+    {
+      id: 11,
+      title: "Foundation & Reinforcement Works",
+      category: "construction",
+      location: "Syokimau, Machakos",
+      image: projectFoundation,
+      value: "KES 8M",
+    },
+    {
+      id: 12,
+      title: "Modern Kitchen Design",
+      category: "construction",
+      location: "Westlands, Nairobi",
+      image: projectKitchen,
+      value: "KES 5M",
+    },
+    {
+      id: 13,
+      title: "Premium Living Room Interior",
+      category: "construction",
+      location: "Lavington, Nairobi",
+      image: projectLivingRoom,
+      value: "KES 7M",
+    },
+    {
+      id: 14,
+      title: "Residential Building Construction",
+      category: "residential",
+      location: "Mlolongo, Machakos",
+      image: projectBuildingProgress,
+      value: "KES 15M",
     },
   ];
 
