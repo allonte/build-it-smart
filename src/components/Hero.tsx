@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, Building2, Users, Award } from "lucide-react";
+import { ArrowRight, Building2, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -94,14 +94,16 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <button
-          onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer animate-fade-in animation-delay-1000"
-        >
-          <span className="font-sans text-xs tracking-[0.3em] uppercase">Scroll</span>
-          <ChevronDown className="w-5 h-5 animate-bounce-slow" />
-        </button>
+        {/* View Our Work Marquee */}
+        <div className="absolute bottom-8 left-0 right-0 overflow-hidden">
+          <div className="flex animate-marquee-reverse whitespace-nowrap">
+            {[...Array(6)].map((_, i) => (
+              <span key={i} className="mx-8 font-display text-lg tracking-[0.3em] uppercase text-muted-foreground/60">
+                View Our Work • Explore Projects • View Our Work • Explore Projects •
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
