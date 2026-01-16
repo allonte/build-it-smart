@@ -105,28 +105,28 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-background relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(215_15%_20%/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(215_15%_20%/0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(270_15%_20%/0.05)_1px,transparent_1px),linear-gradient(to_bottom,hsl(270_15%_20%/0.05)_1px,transparent_1px)] bg-[size:80px_80px]" />
       
       <div className="container mx-auto px-6 relative">
         {/* Section Header */}
-        <AnimatedSection className="max-w-3xl mb-12" direction="left">
+        <AnimatedSection className="max-w-3xl mx-auto text-center mb-12" direction="left">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-6">
             <Folder className="w-4 h-4 text-primary" />
             <span className="font-sans text-xs tracking-[0.2em] uppercase text-primary">Our Portfolio</span>
           </div>
           
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight text-left">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
             Featured <span className="text-gradient-primary">Projects</span>
           </h2>
           
-          <p className="font-sans text-muted-foreground text-lg leading-relaxed text-left">
+          <p className="font-sans text-muted-foreground text-lg leading-relaxed">
             Explore our portfolio of successful projects and innovative solutions we've delivered to clients.
           </p>
         </AnimatedSection>
 
         {/* Filter Tabs */}
         <AnimatedSection direction="left" delay={0.1}>
-          <div className="flex flex-wrap justify-start gap-2 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
             {filters.map((filter) => (
               <button
                 key={filter.id}
@@ -174,13 +174,13 @@ const Projects = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
+                <div className="p-6 text-center">
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground mb-2">
                     <MapPin className="w-3.5 h-3.5" />
                     <span className="font-sans text-xs">{project.location}</span>
                   </div>
                   
-                  <h3 className="font-display text-xl text-foreground mb-4 text-left">
+                  <h3 className="font-display text-xl text-foreground mb-4">
                     {project.title}
                   </h3>
                   
@@ -199,7 +199,7 @@ const Projects = () => {
         </div>
 
         {/* View All CTA */}
-        <AnimatedSection className="mt-12" direction="left">
+        <AnimatedSection className="mt-12 text-center" direction="left">
           <Button 
             variant="outline" 
             size="lg"
