@@ -34,7 +34,6 @@ const Projects = () => {
       category: "infrastructure",
       location: "Mombasa County",
       image: projectDrainage,
-      value: "KES 15M",
     },
     {
       id: 2,
@@ -42,7 +41,6 @@ const Projects = () => {
       category: "infrastructure",
       location: "Kilifi County",
       image: projectExcavation,
-      value: "KES 18M",
     },
     {
       id: 3,
@@ -66,7 +64,6 @@ const Projects = () => {
       category: "infrastructure",
       location: "Kisumu County",
       image: projectRoadwork,
-      value: "KES 14M",
     },
     {
       id: 6,
@@ -74,7 +71,6 @@ const Projects = () => {
       category: "infrastructure",
       location: "Busia County",
       image: projectTarmac,
-      value: "KES 20M",
     },
     {
       id: 7,
@@ -229,14 +225,16 @@ const Projects = () => {
                     {project.title}
                   </h3>
                   
-                  <div className="flex items-center justify-between pt-4 border-t border-border">
-                    <span className="font-sans text-xs tracking-wider uppercase text-muted-foreground">
-                      Project Value
-                    </span>
-                    <span className="font-display text-xl text-gradient-primary">
-                      {project.value}
-                    </span>
-                  </div>
+                  {project.value && (
+                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                      <span className="font-sans text-xs tracking-wider uppercase text-muted-foreground">
+                        Project Value
+                      </span>
+                      <span className="font-display text-xl text-gradient-primary">
+                        {project.value}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
