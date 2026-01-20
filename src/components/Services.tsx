@@ -72,7 +72,7 @@ const Services = () => {
       
       <div className="container mx-auto px-6 relative">
         {/* Section Header */}
-        <AnimatedSection className="max-w-3xl mx-auto text-center mb-16" direction="left">
+        <AnimatedSection className="max-w-3xl mx-auto text-center mb-16" direction="right">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-6">
             <Cog className="w-4 h-4 text-primary" />
             <span className="font-sans text-xs tracking-[0.2em] uppercase text-primary">Our Services</span>
@@ -93,8 +93,8 @@ const Services = () => {
           {services.map((service, index) => (
             <AnimatedSection 
               key={service.title} 
-              direction="left" 
-              delay={index * 0.05}
+              direction={index % 2 === 0 ? "left" : "right"} 
+              delay={Math.min(index * 0.03, 0.15)}
             >
               <div className="group relative p-6 rounded-2xl bg-background/50 backdrop-blur-sm border border-border hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 h-full text-center">
                 {/* Hover Glow */}
