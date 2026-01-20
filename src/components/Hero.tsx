@@ -24,7 +24,7 @@ const Hero = () => {
       className="relative min-h-screen flex overflow-hidden"
     >
       {/* Left Content Side */}
-      <div className="relative w-full lg:w-1/2 flex flex-col justify-center bg-background px-8 md:px-16 lg:px-20 py-24 z-10">
+      <div className="relative w-full lg:w-1/2 flex flex-col justify-center bg-transparent lg:bg-background px-8 md:px-16 lg:px-20 py-24 z-10">
         {/* Subtitle - from right */}
         <motion.p 
           className="font-sans text-sm md:text-base tracking-[0.3em] uppercase text-primary mb-6"
@@ -136,7 +136,7 @@ const Hero = () => {
       </div>
 
       {/* Mobile Background */}
-      <div className="lg:hidden absolute inset-0 -z-10">
+      <div className="lg:hidden absolute inset-0 z-0">
         <img 
           src={heroBackground} 
           alt="Construction site at sunset" 
@@ -145,7 +145,7 @@ const Hero = () => {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/70" />
       </div>
     </section>
   );
