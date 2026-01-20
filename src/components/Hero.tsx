@@ -134,12 +134,12 @@ const Hero = () => {
         <img 
           src={heroBackground} 
           alt="Construction site at sunset" 
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/80" />
       </div>
     </section>
   );
