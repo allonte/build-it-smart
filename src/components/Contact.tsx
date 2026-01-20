@@ -31,6 +31,13 @@ const Contact = () => {
 
   const contactInfo = [
     {
+      icon: MessageSquare,
+      title: "WhatsApp Us",
+      content: "+254 719 757 416",
+      subContent: "Click to send message",
+      href: "https://wa.me/254719757416",
+    },
+    {
       icon: MapPin,
       title: "Visit Us",
       content: "College House, Koinange Street",
@@ -42,13 +49,6 @@ const Contact = () => {
       content: "+254 719 757 416",
       subContent: "",
       href: "tel:+254719757416",
-    },
-    {
-      icon: MessageSquare,
-      title: "WhatsApp Us",
-      content: "+254 719 757 416",
-      subContent: "Click to send message",
-      href: "https://wa.me/254719757416",
     },
     {
       icon: Mail,
