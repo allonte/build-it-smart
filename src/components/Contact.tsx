@@ -90,6 +90,23 @@ const Contact = () => {
           {/* Contact Form */}
           <AnimatedSection direction="left" delay={0.1}>
             <div className="p-8 md:p-10 rounded-3xl bg-card/50 backdrop-blur-sm border border-border text-center">
+              {/* WhatsApp Quick Contact */}
+              <a 
+                href="https://wa.me/254719757416" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-3 w-full p-4 mb-8 rounded-xl bg-green-600 hover:bg-green-500 text-white transition-all duration-300 shadow-lg hover:shadow-green-500/30"
+              >
+                <MessageSquare className="w-5 h-5" />
+                <span className="font-sans font-semibold">Quick Quote via WhatsApp</span>
+              </a>
+
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex-1 h-px bg-border"></div>
+                <span className="font-sans text-xs tracking-wider uppercase text-muted-foreground">Or fill the form</span>
+                <div className="flex-1 h-px bg-border"></div>
+              </div>
+
               <h3 className="font-display text-2xl text-foreground mb-8">
                 Request a Free Quote
               </h3>
