@@ -25,11 +25,11 @@ const Hero = () => {
     >
       {/* Left Content Side */}
       <div className="relative w-full lg:w-1/2 flex flex-col justify-center bg-background px-8 md:px-16 lg:px-20 py-24 z-10">
-        {/* Subtitle */}
+        {/* Subtitle - from right */}
         <motion.p 
           className="font-sans text-sm md:text-base tracking-[0.3em] uppercase text-primary mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           Where Design Meets Innovation
@@ -63,22 +63,22 @@ const Hero = () => {
           </motion.h2>
         </div>
 
-        {/* Description */}
+        {/* Description - from left */}
         <motion.p 
           className="font-sans text-lg md:text-xl text-muted-foreground max-w-md mb-10 leading-relaxed"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 0, x: -80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
         >
           Building the future with precision and integrity. We transform your construction dreams into exceptional realities with world-class craftsmanship.
         </motion.p>
 
-        {/* CTA Links */}
+        {/* CTA Links - from right */}
         <motion.div 
           className="flex items-center gap-8 mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
           <button 
             onClick={scrollToProjects}
@@ -95,22 +95,28 @@ const Hero = () => {
         </motion.div>
 
 
-        {/* Stats Row */}
+        {/* Stats Row - staggered from alternating sides */}
         <motion.div 
           className="flex flex-wrap gap-8 md:gap-12 mt-16 pt-8 border-t border-border"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
         >
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-left">
+          {stats.map((stat, index) => (
+            <motion.div 
+              key={stat.label} 
+              className="text-left"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 + index * 0.15, ease: "easeOut" }}
+            >
               <div className="font-display text-3xl md:text-4xl text-foreground mb-1">
                 <CountingNumber value={stat.value} suffix={stat.suffix} duration={2500} />
               </div>
               <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
                 {stat.label}
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
