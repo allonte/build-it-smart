@@ -25,7 +25,7 @@ const Hero = () => {
       className="relative min-h-screen flex overflow-hidden"
     >
       {/* Left Content Side */}
-      <div className="relative w-full lg:w-1/2 flex flex-col justify-center bg-transparent lg:bg-background px-8 md:px-16 lg:px-20 py-24 z-10">
+      <div className="relative w-full lg:w-1/2 flex flex-col justify-center bg-black/50 lg:bg-background px-8 md:px-16 lg:px-20 py-24 z-10">
         {/* Subtitle - from right */}
         <motion.p 
           className="font-sans text-sm md:text-base tracking-[0.3em] uppercase text-primary mb-6"
