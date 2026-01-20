@@ -1,6 +1,7 @@
 import { Building2, Users, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import CountingNumber from "@/components/CountingNumber";
+import AnimatedButton from "@/components/ui/animated-button";
 import heroBackground from "@/assets/hero-construction.jpg";
 
 const Hero = () => {
@@ -80,18 +81,8 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
-          <button 
-            onClick={scrollToProjects}
-            className="font-sans text-sm tracking-wider uppercase text-white lg:text-foreground border-b-2 border-white lg:border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
-          >
-            View Our Work
-          </button>
-          <button 
-            onClick={scrollToContact}
-            className="font-sans text-sm tracking-wider uppercase text-white lg:text-foreground border-b-2 border-white lg:border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
-          >
-            Get a Quote
-          </button>
+          <AnimatedButton text="View Our Work" onClick={scrollToProjects} />
+          <AnimatedButton text="Get a Quote" onClick={scrollToContact} />
         </motion.div>
 
 
