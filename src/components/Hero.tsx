@@ -38,7 +38,7 @@ const Hero = () => {
         {/* Main Headline with slow-motion slide animation */}
         <div className="overflow-hidden">
           <motion.h1 
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-foreground"
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none text-white lg:text-foreground"
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ 
@@ -65,7 +65,7 @@ const Hero = () => {
 
         {/* Description - from left */}
         <motion.p 
-          className="font-sans text-lg md:text-xl text-muted-foreground max-w-md mb-10 leading-relaxed"
+          className="font-sans text-lg md:text-xl text-white/90 lg:text-muted-foreground max-w-md mb-10 leading-relaxed"
           initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -82,13 +82,13 @@ const Hero = () => {
         >
           <button 
             onClick={scrollToProjects}
-            className="font-sans text-sm tracking-wider uppercase text-foreground border-b-2 border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
+            className="font-sans text-sm tracking-wider uppercase text-white lg:text-foreground border-b-2 border-white lg:border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
           >
             View Our Work
           </button>
           <button 
             onClick={scrollToContact}
-            className="font-sans text-sm tracking-wider uppercase text-foreground border-b-2 border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
+            className="font-sans text-sm tracking-wider uppercase text-white lg:text-foreground border-b-2 border-white lg:border-foreground pb-1 hover:text-primary hover:border-primary transition-colors duration-300"
           >
             Get a Quote
           </button>
@@ -97,7 +97,7 @@ const Hero = () => {
 
         {/* Stats Row - staggered from alternating sides */}
         <motion.div 
-          className="flex flex-wrap gap-8 md:gap-12 mt-16 pt-8 border-t border-border"
+          className="flex flex-wrap gap-8 md:gap-12 mt-16 pt-8 border-t border-white/30 lg:border-border"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
@@ -110,10 +110,10 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.7 + index * 0.15, ease: "easeOut" }}
             >
-              <div className="font-display text-3xl md:text-4xl text-foreground mb-1">
+              <div className="font-display text-3xl md:text-4xl text-white lg:text-foreground mb-1">
                 <CountingNumber value={stat.value} suffix={stat.suffix} duration={2500} />
               </div>
-              <div className="font-sans text-xs text-muted-foreground uppercase tracking-wider">
+              <div className="font-sans text-xs text-white/80 lg:text-muted-foreground uppercase tracking-wider">
                 {stat.label}
               </div>
             </motion.div>
