@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, ArrowUp } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUp, MessageSquare } from "lucide-react";
 import logoMazika from "@/assets/logo-mazika.png";
 
 const Footer = () => {
@@ -51,6 +51,17 @@ const Footer = () => {
                   <Phone className="w-4 h-4 text-primary" />
                 </div>
                 +254 719 757 416
+              </a>
+              <a
+                href="https://wa.me/254719757416"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 font-sans text-sm text-muted-foreground hover:text-accent transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                  <MessageSquare className="w-4 h-4 text-accent" />
+                </div>
+                WhatsApp Us
               </a>
               <a
                 href="mailto:info@mazikaengineering.co.ke"

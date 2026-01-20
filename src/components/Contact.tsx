@@ -41,6 +41,14 @@ const Contact = () => {
       title: "Call Us",
       content: "+254 719 757 416",
       subContent: "",
+      href: "tel:+254719757416",
+    },
+    {
+      icon: MessageSquare,
+      title: "WhatsApp Us",
+      content: "+254 719 757 416",
+      subContent: "Click to send message",
+      href: "https://wa.me/254719757416",
     },
     {
       icon: Mail,
@@ -203,24 +211,29 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            {contactInfo.map((info, index) => (
-              <AnimatedSection key={info.title} direction="right" delay={0.1 + index * 0.1}>
-                <div className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 flex gap-5 text-center">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 shadow-primary group-hover:shadow-primary-lg transition-shadow duration-300">
-                    <info.icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div className="text-left">
-                    <h4 className="font-sans font-semibold text-foreground mb-1">
-                      {info.title}
-                    </h4>
-                    <p className="font-sans text-muted-foreground">{info.content}</p>
-                    {info.subContent && (
-                      <p className="font-sans text-muted-foreground text-sm">{info.subContent}</p>
-                    )}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+            {contactInfo.map((info, index) => {
+              const Wrapper = info.href ? 'a' : 'div';
+              const wrapperProps = info.href ? { href: info.href, target: info.href.startsWith('https') ? '_blank' : undefined, rel: info.href.startsWith('https') ? 'noopener noreferrer' : undefined } : {};
+              
+              return (
+                <AnimatedSection key={info.title} direction="right" delay={0.1 + index * 0.1}>
+                  <Wrapper {...wrapperProps} className="group p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border hover:border-primary/30 transition-all duration-300 flex gap-5 text-center cursor-pointer block">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center shrink-0 shadow-primary group-hover:shadow-primary-lg transition-shadow duration-300">
+                      <info.icon className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <div className="text-left">
+                      <h4 className="font-sans font-semibold text-foreground mb-1">
+                        {info.title}
+                      </h4>
+                      <p className="font-sans text-muted-foreground">{info.content}</p>
+                      {info.subContent && (
+                        <p className="font-sans text-muted-foreground text-sm">{info.subContent}</p>
+                      )}
+                    </div>
+                  </Wrapper>
+                </AnimatedSection>
+              );
+            })}
 
             {/* Map Placeholder */}
             <AnimatedSection direction="right" delay={0.5}>
