@@ -17,15 +17,15 @@ const AnimatedSection = ({
   const getInitialPosition = () => {
     switch (direction) {
       case "left":
-        return { x: -60, y: 0 };
+        return { x: -40, y: 0 };
       case "right":
-        return { x: 60, y: 0 };
+        return { x: 40, y: 0 };
       case "up":
-        return { x: 0, y: 60 };
+        return { x: 0, y: 40 };
       case "down":
-        return { x: 0, y: -60 };
+        return { x: 0, y: -40 };
       default:
-        return { x: -60, y: 0 };
+        return { x: -40, y: 0 };
     }
   };
 
@@ -41,11 +41,11 @@ const AnimatedSection = ({
         x: 0, 
         y: 0 
       }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ 
-        duration: 0.7, 
+        duration: 0.5, 
         delay,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: "easeOut"
       }}
     >
       {children}

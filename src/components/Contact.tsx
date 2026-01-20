@@ -71,7 +71,7 @@ const Contact = () => {
       
       <div className="container mx-auto px-6 relative">
         {/* Section Header */}
-        <AnimatedSection className="max-w-3xl mx-auto text-center mb-16" direction="left">
+        <AnimatedSection className="max-w-3xl mx-auto text-center mb-16" direction="right">
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-5 py-2 mb-6">
             <MessageSquare className="w-4 h-4 text-primary" />
             <span className="font-sans text-xs tracking-[0.2em] uppercase text-primary">Contact Us</span>
