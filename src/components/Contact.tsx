@@ -252,18 +252,6 @@ const Contact = () => {
               );
             })}
 
-            {/* Map Placeholder */}
-            <AnimatedSection direction="right" delay={0.5}>
-              <div className="p-6 rounded-2xl bg-gradient-primary-soft border border-primary/20 h-40 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-10 h-10 text-primary mb-3 mx-auto" />
-                  <p className="font-sans text-foreground">
-                    College House, Koinange Street
-                  </p>
-                  <p className="font-sans text-muted-foreground text-sm">Nairobi, Kenya</p>
-                </div>
-              </div>
-            </AnimatedSection>
           </div>
         </div>
       </div>
